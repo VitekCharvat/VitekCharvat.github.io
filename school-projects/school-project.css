@@ -7,6 +7,7 @@
     --color-link: #344e41;
     --color-secondary-text: #2f4f3f;
     --color-secondary-background: #dcebdd;
+    --color-thirth-background: #caf1c0;
     --color-primary-text: #f5fff9;
     --color-dark-text: #e2e8f0;
     --color-dark-link: #cbd5e1;
@@ -55,7 +56,7 @@ body {
     padding: 20px 40px;
 }
 
-.btn {
+.btn, .btn-home {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -74,4 +75,13 @@ body {
 .btn {
     background-color: var(--color-primary);
     color: var(--color-primary-text);
+}
+
+#footer {
+    text-align: center;
+}
+
+#footer .btn{
+    background-color: var(--color-thirth-background);
+    color: var(--color-secondary-text);
 }
