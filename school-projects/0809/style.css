@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap');
+
+:root {
+    --color-text: #0a0533;
+
+    --color-muted: #dbe3ee;
+    --color-muted-text: #42516b;
+
+
+    --color-accent: #e9b44c;
+    --color-border: #c7d2df;
+}
+body {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 24px;
+    background-color: var(--color-muted);
+    color: var(--color-text);
+    font-family: "Playwrite NZ Basic", sans-serif;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+ul {
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.languages p{
+    padding-bottom: 20px;
+}
+
+.links {
+    text-align: center;
+}
+
+.links a {
+    color: var(--color-muted-text);
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: var(--color-accent);
+}
+
+img {
+    background-color: var(--color-border);
+    border-radius: 15px;
+    padding: 10px;
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: 20px auto;
+}
+

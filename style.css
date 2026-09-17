@@ -115,10 +115,10 @@ body {
     color: var(--color-primary-text);
 }
 
-/* .btn-secondary {
+.btn-secondary {
     background-color: var(--color-secondary-background);
     color: var(--color-secondary-text);
-} */
+}
 
 /* .theme-toggle {
     border: none;
