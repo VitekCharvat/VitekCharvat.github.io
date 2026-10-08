@@ -11,7 +11,7 @@ Všechny obrazové soubory jsou uložené pod `assets`, jak požadoval uživatel
 
 Náhledy projektů jsou stylizované ilustrace vytvořené HTML/CSS. Nejde o screenshoty aplikací. Postava v původním návrhu byla v realizaci nahrazena ikonou z Font Awesome, aby nevznikala domnělá podobizna autora.
 
-## Zadání pro pracovní koutek
+## Aktuální podoba portfolia
 
 Aktuální úvod vychází z druhého mockupu; ostatní sekce zachovávají první návrh.
 

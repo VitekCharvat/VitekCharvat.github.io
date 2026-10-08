@@ -338,6 +338,7 @@ h1 {
 }
 .footer-dot { color: var(--green); padding-inline: 0.45rem; }
 .footer-note { color: var(--muted); }
+.footer-note a { color: var(--green); }
 .validator-link {
   padding: 0.4rem 0.65rem;
   color: #dce4ef;

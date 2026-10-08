@@ -117,28 +117,18 @@
     },
     {
       "type": "info",
-      "lastLine": 87,
-      "lastColumn": 23,
-      "firstColumn": 18,
-      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
-      "extract": "       Vít<br />Charvá",
-      "hiliteStart": 10,
-      "hiliteLength": 6
-    },
-    {
-      "type": "info",
-      "lastLine": 115,
-      "firstLine": 108,
+      "lastLine": 114,
+      "firstLine": 107,
       "lastColumn": 16,
       "firstColumn": 15,
       "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
-      "extract": "          <img\n                class=\"img-fluid\"\n                src=\"assets/images/pixel-workspace.png\"\n                width=\"1536\"\n                height=\"1024\"\n                alt=\"Pixelový pracovní koutek s počítačem, teplým světlem lampy a výhledem na noční hory.\"\n                fetchpriority=\"high\"\n              />\n     ",
+      "extract": "          <img\n                class=\"img-fluid\"\n                src=\"assets/images/pixel-computer.png\"\n                width=\"1448\"\n                height=\"1086\"\n                alt=\"Pixelový retro počítač s klávesnicí, rostlinou a knihami na dřevěné poličce.\"\n                fetchpriority=\"high\"\n              />\n     ",
       "hiliteStart": 10,
-      "hiliteLength": 314
+      "hiliteLength": 305
     },
     {
       "type": "info",
-      "lastLine": 232,
+      "lastLine": 228,
       "lastColumn": 73,
       "firstColumn": 68,
       "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
@@ -148,7 +138,7 @@
     },
     {
       "type": "info",
-      "lastLine": 235,
+      "lastLine": 231,
       "lastColumn": 27,
       "firstColumn": 22,
       "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
@@ -158,7 +148,7 @@
     },
     {
       "type": "info",
-      "lastLine": 235,
+      "lastLine": 231,
       "lastColumn": 45,
       "firstColumn": 40,
       "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",

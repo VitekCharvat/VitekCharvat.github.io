@@ -1,6 +1,8 @@
 
 ## Soubory
 
+- `PORTFOLIO.md`: popis portfolia, technologie a návod ke spuštění.
+
 - `index.html`: hlavní portfolio.
 - `skolni-projekty.html`: samostatný přehled školních prací.
 - `style.css`: vlastní vzhled a české komentáře k náročnějším pravidlům.
@@ -32,9 +34,9 @@ Na webu není žádný `<script>`, událostní obsluha ani závislost na JavaScr
 
 ## Validace v patičce
 
-Odkaz **Ověřit HTML** otevře W3C validátor na záložce pro nahrání souboru. Nahraj `index.html`, případně samostatně `skolni-projekty.html`.
+Odkaz **Ověřit HTML** rovnou spustí W3C Nu kontrolu adresy `https://vitekcharvat.github.io/`.
 
-Odkaz **Ověřit CSS** otevře CSS validátor. Nahraj `style.css`. Služba nemůže načíst soubor z tvého počítače ani adresu `localhost`, proto zde nepoužíváme ověřování přes HTTP Referer. Po zveřejnění lze ve validátoru zadat veřejnou adresu stránky. Odkazy samy o sobě nejsou potvrzením, že validace prošla.
+Odkaz **Ověřit CSS** rovnou spustí W3C CSS validátor pro stejnou adresu s profilem CSS3 SVG. Oba odkazy otevírají novou kartu a ověřují aktuálně zveřejněnou verzi webu, nikoli místní soubory.
 
 Bootstrap a Font Awesome jsou cizí knihovny, vlastní pravidla upravuj v `style.css`.
 
