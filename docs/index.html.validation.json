@@ -1,0 +1,170 @@
+{
+  "version": "26.10.7",
+  "messages": [
+    {
+      "type": "info",
+      "lastLine": 4,
+      "lastColumn": 28,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "head>\n    <meta charset=\"UTF-8\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 24
+    },
+    {
+      "type": "info",
+      "lastLine": 5,
+      "lastColumn": 74,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 70
+    },
+    {
+      "type": "info",
+      "lastLine": 9,
+      "firstLine": 6,
+      "lastColumn": 6,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "1\" />\n    <meta\n      name=\"description\"\n      content=\"Portfolio Víta Charváta. Webové a Python projekty začínajícího vývojáře v pixelovém světě.\"\n    />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 144
+    },
+    {
+      "type": "info",
+      "lastLine": 10,
+      "lastColumn": 49,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "   />\n    <meta name=\"theme-color\" content=\"#091827\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 45
+    },
+    {
+      "type": "info",
+      "lastLine": 12,
+      "lastColumn": 70,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "itle>\n    <link rel=\"icon\" href=\"assets/favicon.svg\" type=\"image/svg+xml\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 66
+    },
+    {
+      "type": "info",
+      "lastLine": 19,
+      "firstLine": 14,
+      "lastColumn": 6,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": ". -->\n    <link\n      href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css\"\n      rel=\"stylesheet\"\n      integrity=\"sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB\"\n      crossorigin=\"anonymous\"\n    />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 240
+    },
+    {
+      "type": "info",
+      "lastLine": 20,
+      "lastColumn": 65,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "   />\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 61
+    },
+    {
+      "type": "info",
+      "lastLine": 21,
+      "lastColumn": 74,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "m\" />\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 70
+    },
+    {
+      "type": "info",
+      "lastLine": 25,
+      "firstLine": 22,
+      "lastColumn": 6,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "in />\n    <link\n      href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Press+Start+2P&amp;display=swap\"\n      rel=\"stylesheet\"\n    />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 163
+    },
+    {
+      "type": "info",
+      "lastLine": 29,
+      "firstLine": 26,
+      "lastColumn": 6,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "   />\n    <link\n      rel=\"stylesheet\"\n      href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css\"\n    />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 122
+    },
+    {
+      "type": "info",
+      "lastLine": 31,
+      "lastColumn": 46,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": ". -->\n    <link rel=\"stylesheet\" href=\"style.css\" />\n  </h",
+      "hiliteStart": 10,
+      "hiliteLength": 42
+    },
+    {
+      "type": "info",
+      "lastLine": 87,
+      "lastColumn": 23,
+      "firstColumn": 18,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "       Vít<br />Charvá",
+      "hiliteStart": 10,
+      "hiliteLength": 6
+    },
+    {
+      "type": "info",
+      "lastLine": 115,
+      "firstLine": 108,
+      "lastColumn": 16,
+      "firstColumn": 15,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "          <img\n                class=\"img-fluid\"\n                src=\"assets/images/pixel-workspace.png\"\n                width=\"1536\"\n                height=\"1024\"\n                alt=\"Pixelový pracovní koutek s počítačem, teplým světlem lampy a výhledem na noční hory.\"\n                fetchpriority=\"high\"\n              />\n     ",
+      "hiliteStart": 10,
+      "hiliteLength": 314
+    },
+    {
+      "type": "info",
+      "lastLine": 232,
+      "lastColumn": 73,
+      "firstColumn": 68,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "hon</span><br /><span\n",
+      "hiliteStart": 10,
+      "hiliteLength": 6
+    },
+    {
+      "type": "info",
+      "lastLine": 235,
+      "lastColumn": 27,
+      "firstColumn": 22,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "         ><br />Ahoj, ",
+      "hiliteStart": 10,
+      "hiliteLength": 6
+    },
+    {
+      "type": "info",
+      "lastLine": 235,
+      "lastColumn": 45,
+      "firstColumn": 40,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "oj, světe!<br />&gt;&g",
+      "hiliteStart": 10,
+      "hiliteLength": 6
+    }
+  ]
+}

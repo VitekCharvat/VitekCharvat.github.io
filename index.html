@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio Víta Charváta. Webové a Python projekty začínajícího vývojáře v pixelovém světě."
+    />
+    <meta name="theme-color" content="#091827" />
+    <title>Vít Charvát | Vývojářské portfolio</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <!-- Bootstrap zajišťuje mřížku, rozestupy, karty a tlačítka. Používáme pouze CSS. -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Press+Start+2P&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <!-- Vlastní styl je poslední, takže může upravit výchozí vzhled Bootstrapu. -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="nahoru">
+    <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
+    <header class="site-header">
+      <div class="container">
+        <!-- Menu se na mobilu zalomí. Nepotřebuje hamburger ani JavaScript. -->
+        <nav class="navbar site-nav" aria-label="Hlavní navigace">
+          <a
+            class="navbar-brand brand d-flex align-items-center gap-3"
+            href="#nahoru"
+            aria-label="Vít Charvát, úvod"
+          >
+            <span class="brand-icon" aria-hidden="true"
+              ><i class="fa-solid fa-terminal"></i
+            ></span>
+            <span>VÍT CHARVÁT</span>
+          </a>
+          <ul class="nav align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#o-mne"
+                ><i class="fa-solid fa-user" aria-hidden="true"></i> O mně</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projekty"
+                ><i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+                Projekty</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#dovednosti"
+                ><i class="fa-solid fa-code" aria-hidden="true"></i>
+                Dovednosti</a
+              >
+            </li>
+            <li class="nav-item nav-github">
+              <a
+                class="btn btn-outline-primary"
+                href="https://github.com/VitekCharvat"
+                ><i class="fa-brands fa-github" aria-hidden="true"></i>
+                GitHub</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="obsah" class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <!-- Bootstrap: na mobilu jsou sloupce pod sebou, od lg má text 7/12 a obrázek 5/12. -->
+        <div class="row align-items-center gy-5 gx-4 gx-lg-5">
+          <div class="col-12 col-lg-7">
+            <p class="eyebrow">Začínající vývojář</p>
+            <h1 id="hero-title">
+              Vít Charvát
+            </h1>
+            <p class="hero-copy">
+              Tvořím weby a malé aplikace.<br>
+              Každý projekt je další level.
+            </p>
+            <div class="d-flex align-items-center flex-wrap gap-4 hero-actions">
+              <a class="btn btn-primary" href="#projekty"
+                >Moje projekty
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+              ></a>
+              <a
+                class="hero-github"
+                href="https://github.com/VitekCharvat"
+                >GitHub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a
+              >
+            </div>
+          </div>
+          <div class="col-12 col-lg-5">
+            <figure class="hero-art mb-0">
+              <img
+                class="img-fluid"
+                src="assets/images/pixel-computer.png"
+                width="1448"
+                height="1086"
+                alt="Pixelový retro počítač s klávesnicí, rostlinou a knihami na dřevěné poličce."
+                fetchpriority="high"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="o-mne"
+        class="about-panel pixel-panel"
+        aria-labelledby="about-title"
+      >
+        <div class="d-flex align-items-center gap-4 gap-md-5">
+          <div
+            class="avatar-frame pixel-frame d-none d-sm-flex"
+            aria-hidden="true"
+          >
+            <i class="fa-solid fa-user-astronaut"></i>
+          </div>
+          <div>
+            <h2 id="about-title" class="section-title">
+              <span class="section-number">01 /</span> O mně
+            </h2>
+            <p class="about-copy mb-0">
+              Jmenuji se Vít a jsem začínající softwarový vývojář. Baví mě
+              programování a proměňování nápadů ve skutečné projekty.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projekty"
+        class="projects-panel pixel-panel"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-heading">
+          <h2 id="projects-title" class="section-title">
+            <span class="section-number">02 /</span> Moje projekty
+          </h2>
+          <p class="text-muted mb-0">Vybrané projekty z mé vývojářské cesty.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card project-card h-100">
+              <!-- Dekorativní náhled je tvořen HTML a CSS, není to screenshot projektu. -->
+              <div class="project-art art-portfolio" aria-hidden="true">
+                <div class="mini-window">
+                  <div class="window-bar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mini-page">
+                    <div class="mini-picture"></div>
+                    <div class="mini-lines"><b></b><b></b><b></b><em></em></div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Osobní portfolio</h3>
+                <p class="card-text">
+                  Moje původní portfolio. První prostor pro vlastní projekty a
+                  nápady.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                  <span class="badge badge-html">HTML</span
+                  ><span class="badge badge-css">CSS</span>
+                </div>
+                <a
+                  class="project-link mt-auto"
+                  href="https://vitekcharvat.github.io/"
+                  >Prohlédnout
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                  ><span class="visually-hidden"> původní portfolio</span></a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card project-card h-100">
+              <div class="project-art" aria-hidden="true">
+                <div class="language-book">
+                  <i class="fa-solid fa-code"></i><span>HTML &amp; CSS</span>
+                  <div class="book-lines"></div>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Programovací jazyky</h3>
+                <p class="card-text">
+                  Školní web o jazycích, které stojí za tvorbou webových
+                  stránek.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                  <span class="badge badge-html">HTML</span
+                  ><span class="badge badge-css">CSS</span>
+                </div>
+                <a
+                  class="project-link mt-auto"
+                  href="https://vitekcharvat.github.io/web-coding-languages/"
+                  >Prohlédnout
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                  ><span class="visually-hidden">
+                    web o programovacích jazycích</span
+                  ></a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card project-card h-100">
+              <div class="project-art art-python" aria-hidden="true">
+                <div class="mini-window terminal-window">
+                  <div class="window-bar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="terminal-body">
+                    <span class="terminal-muted">&gt; python</span><br /><span
+                      class="terminal-gold"
+                      >&gt;&gt;&gt; print("Ahoj, světe!")</span
+                    ><br />Ahoj, světe!<br />&gt;&gt;&gt;
+                  </div>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Python projekty</h3>
+                <p class="card-text">
+                  Malé programy a experimenty, na kterých si zkouším
+                  programování.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                  <span class="badge badge-python">Python</span>
+                </div>
+                <a
+                  class="project-link mt-auto"
+                  href="https://github.com/VitekCharvat/Small-Python-Projects"
+                  >Prohlédnout
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                  ><span class="visually-hidden">
+                    Python projekty na GitHubu</span
+                  ></a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a class="btn btn-outline-primary" href="skolni-projekty.html"
+            ><i class="fa-solid fa-folder-open" aria-hidden="true"></i> Školní
+            projekty <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+          ></a>
+        </div>
+      </section>
+
+      <section
+        id="dovednosti"
+        class="skills-section"
+        aria-labelledby="skills-title"
+      >
+        <h2 id="skills-title" class="section-title">
+          <span class="section-number">03 /</span> Dovednosti
+        </h2>
+        <ul class="row g-3 list-unstyled mb-0">
+          <li class="col-6 col-lg-3">
+            <div class="skill-tile pixel-panel">
+              <i class="fa-brands fa-html5 skill-html" aria-hidden="true"></i
+              ><span>HTML</span>
+            </div>
+          </li>
+          <li class="col-6 col-lg-3">
+            <div class="skill-tile pixel-panel">
+              <i class="fa-brands fa-css3-alt skill-css" aria-hidden="true"></i
+              ><span>CSS</span>
+            </div>
+          </li>
+          <li class="col-6 col-lg-3">
+            <div class="skill-tile pixel-panel">
+              <i class="fa-brands fa-python skill-python" aria-hidden="true"></i
+              ><span>Python</span>
+            </div>
+          </li>
+          <li class="col-6 col-lg-3">
+            <div class="skill-tile pixel-panel">
+              <i class="fa-brands fa-git-alt skill-git" aria-hidden="true"></i
+              ><span>Git &amp; GitHub</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section
+        class="contact-panel pixel-panel text-center"
+        aria-labelledby="contact-title"
+      >
+        <div>
+          <h2 id="contact-title">Další level? Nový projekt.</h2>
+          <p>Další projekty a zdrojové kódy najdeš na mém GitHubu.</p>
+          <a
+            class="btn btn-outline-primary"
+            href="https://github.com/VitekCharvat"
+            ><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            <i
+              class="fa-solid fa-arrow-up-right-from-square small"
+              aria-hidden="true"
+            ></i
+          ></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div
+        class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3"
+      >
+        <p class="mb-0">
+          © 2026 Vít Charvát
+          <span class="footer-dot" aria-hidden="true">·</span>
+          <span class="footer-note">Vytvořeno s pomocí AI</span>
+        </p>
+        <!-- Místní soubor nelze validovat přes veřejnou URL. Tyto odkazy otevřou nahrání souboru. -->
+        <div class="d-flex gap-2">
+          <a
+            class="validator-link"
+            href="https://validator.w3.org/#validate_by_upload"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ověřit HTML ve W3C validátoru, nová karta"
+            >Ověřit HTML</a
+          >
+          <a
+            class="validator-link"
+            href="https://jigsaw.w3.org/css-validator/#validate_by_upload"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ověřit CSS ve W3C validátoru, nová karta"
+            >Ověřit CSS</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

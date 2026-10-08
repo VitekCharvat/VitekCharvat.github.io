@@ -1,0 +1,390 @@
+/* ================================================================
+   PIXELOVÉ PORTFOLIO | Vít Charvát
+   Bootstrap řeší rozložení. Tento soubor mu přidává herní vzhled.
+   Podrobnější vysvětlení najdeš v docs/CSS-PRUVODCE.md.
+   ================================================================ */
+
+/* 1. PROMĚNNÉ: :root znamená kořen dokumentu. Barvu uložíme jednou
+   a pomocí var(--nazev) ji použijeme kdekoli. Změna zde upraví celý web. */
+:root {
+  --page-bg: #091827;
+  --panel-bg: #102238;
+  --border: #375877;
+  --border-light: #6587aa;
+  --ink: #f5f3df;
+  --muted: #b9c7d6;
+  --green: #b2ec83;
+  --gold: #f1ce75;
+  --pixel-font: "Press Start 2P", monospace;
+  --bs-body-font-family: "Inter", sans-serif;
+  --bs-body-bg: var(--page-bg);
+  --bs-body-color: var(--ink);
+  --bs-secondary-color: var(--muted);
+  --bs-border-color: var(--border);
+  --bs-link-color: var(--green);
+  --bs-link-hover-color: #d4ffb5;
+}
+
+html { scroll-behavior: smooth; }
+body { line-height: 1.75; }
+a { text-underline-offset: 0.25em; }
+
+/* :focus-visible vykreslí jasný obrys při ovládání klávesnicí.
+   Člověk tak vždy vidí, na kterém odkazu právě je. */
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 6px; }
+section[id] { scroll-margin-top: 2rem; }
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -8rem;
+  z-index: 10;
+  padding: 0.8rem 1rem;
+  background: var(--green);
+  color: var(--page-bg);
+}
+.skip-link:focus { top: 1rem; }
+
+/* 2. HLAVIČKA A BOOTSTRAP TLAČÍTKA */
+.site-header { border-bottom: 1px solid var(--border); }
+.site-nav { padding-block: 1.1rem; gap: 1rem; }
+.brand {
+  color: var(--ink);
+  font-family: var(--pixel-font);
+  font-size: 0.8rem;
+  margin: 0;
+}
+.brand:hover,
+.brand:focus { color: var(--green); }
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 39px;
+  border: 2px solid var(--green);
+  color: var(--green);
+  font-size: 1.2rem;
+}
+.site-nav .nav { gap: 0.35rem; }
+.site-nav .nav-link { color: var(--ink); padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+.site-nav .nav-link i { margin-right: 0.4rem; }
+.site-nav .nav-link:hover { color: var(--green); }
+.nav-github { margin-left: 1rem; }
+.btn {
+  --bs-btn-border-radius: 0;
+  padding: 0.75rem 1.15rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-width: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.btn-primary {
+  --bs-btn-color: #0b1b26;
+  --bs-btn-bg: var(--green);
+  --bs-btn-border-color: var(--green);
+  --bs-btn-hover-color: #0b1b26;
+  --bs-btn-hover-bg: #c6f79e;
+  --bs-btn-hover-border-color: #c6f79e;
+  --bs-btn-active-bg: #c6f79e;
+  --bs-btn-active-color: #0b1b26;
+  --bs-btn-active-border-color: #c6f79e;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--ink);
+  --bs-btn-border-color: var(--green);
+  --bs-btn-hover-color: var(--page-bg);
+  --bs-btn-hover-bg: var(--green);
+  --bs-btn-hover-border-color: var(--green);
+  --bs-btn-active-bg: var(--green);
+  --bs-btn-active-color: var(--page-bg);
+  --bs-btn-active-border-color: var(--green);
+  background-color: var(--page-bg);
+}
+
+/* 3. ÚVOD. clamp(minimum, pružná hodnota, maximum) mění velikost
+   písma podle šířky okna, ale nikdy nepřekročí zadané meze.
+   1rem je běžně 16px; 1vw je jedno procento šířky okna. */
+.hero { padding-block: 4.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.eyebrow {
+  font-family: var(--pixel-font);
+  color: var(--green);
+  font-size: 0.65rem;
+  line-height: 1.8;
+  margin-bottom: 1.35rem;
+}
+h1 {
+  font-family: var(--pixel-font);
+  font-size: clamp(1.4rem, 4.2vw, 3.35rem);
+  line-height: 1.45;
+  letter-spacing: -0.055em;
+  text-shadow: 3px 3px 0 #5a805b;
+  margin-bottom: 1.15rem;
+}
+.hero-copy {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: #e2e7ee;
+  line-height: 1.8;
+  margin-bottom: 1.7rem;
+}
+.hero-github { color: var(--ink); font-weight: 600; padding-block: 0.75rem; }
+.hero-github i { font-size: 0.75em; margin-left: 0.4rem; }
+.hero-art { max-width: 25rem; margin-inline: auto; }
+.hero-art img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+
+/* 4. RÁMEČKY. box-shadow bez rozmazání vytváří ostrý herní stín. */
+.pixel-frame { border: 2px solid var(--gold); box-shadow: 4px 4px 0 #06111c; }
+.pixel-panel {
+  border: 1px solid var(--border);
+  background-color: var(--panel-bg);
+}
+.section-title {
+  font-family: var(--pixel-font);
+  font-size: clamp(0.9rem, 1.85vw, 1.2rem);
+  line-height: 1.8;
+  margin-bottom: 0.8rem;
+}
+.section-number {
+  color: var(--gold);
+  font-size: 0.75em;
+  margin-right: 0.45rem;
+  white-space: nowrap;
+}
+.section-heading { margin-bottom: 1.7rem; }
+.about-panel { padding: 2rem; margin-bottom: 1.6rem; }
+.about-copy { max-width: 52rem; color: #e2e7ee; }
+.avatar-frame {
+  width: 108px;
+  height: 108px;
+  flex: 0 0 108px;
+  align-items: center;
+  justify-content: center;
+  background: #1f3a39;
+  color: var(--green);
+  font-size: 3.5rem;
+}
+
+/* 5. KARTY PROJEKTŮ. h-100 a flex-column (Bootstrap) udrží karty
+   stejně vysoké. mt-auto posune odkaz dolů i u kratšího textu. */
+.projects-panel { padding: 1.8rem; }
+.project-card {
+  --bs-card-bg: #0c1d30;
+  --bs-card-color: var(--ink);
+  --bs-card-border-color: var(--border);
+  --bs-card-border-radius: 0;
+  border-width: 2px;
+  padding: 7px;
+}
+.project-card .card-body { padding: 1rem 0.5rem 0.6rem; }
+.project-card .card-title { font-size: 1.1rem; font-weight: 700; line-height: 1.5; }
+.project-card .card-text { color: #c9d5e3; font-size: 0.9rem; line-height: 1.7; }
+.badge {
+  border-radius: 0;
+  border: 1px solid;
+  font-weight: 500;
+  padding: 0.42rem 0.65rem;
+}
+.badge-html { color: #ffe0c9; background: #693c2b; border-color: #ba7856; }
+.badge-css { color: #e1edff; background: #203e70; border-color: #608ecd; }
+.badge-python { color: #e3e2ff; background: #293357; border-color: #838ec5; }
+.project-link {
+  color: var(--green);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.85rem;
+  min-height: 32px;
+}
+.project-link:hover { text-decoration: underline; }
+
+/* Náhledy jsou jednoduché ilustrace z HTML/CSS, doplněné vlastní
+   pixelovou krajinou. aria-hidden v HTML je skryje před čtečkou. */
+.project-art {
+  height: 166px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #132c47 url("assets/images/pixel-landscape.png") center bottom /
+    cover no-repeat;
+  border: 1px solid var(--border);
+}
+.mini-window {
+  width: 82%;
+  border: 3px solid #c4ad75;
+  background: #e6dfc5;
+  box-shadow: 6px 6px 0 #06111c;
+}
+.window-bar {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-inline: 8px;
+  background: #14283d;
+  border-bottom: 2px solid #57728a;
+}
+.window-bar span { width: 6px; height: 6px; background: #d68567; }
+.window-bar span:nth-child(2) { background: var(--gold); }
+.window-bar span:nth-child(3) { background: var(--green); }
+.mini-page {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  height: 98px;
+}
+.mini-picture {
+  width: 50%;
+  background: #1a3556 url("assets/images/pixel-landscape.png") 15% center /
+    cover;
+  border: 3px solid #b1bfca;
+}
+.mini-lines { flex: 1; padding-top: 4px; }
+.mini-lines b {
+  display: block;
+  height: 6px;
+  background: #647590;
+  margin-bottom: 7px;
+}
+.mini-lines b:nth-child(2) { width: 75%; }
+.mini-lines em {
+  display: block;
+  width: 55%;
+  height: 15px;
+  background: #4d7182;
+  margin-top: 9px;
+}
+.language-book {
+  width: 61%;
+  height: 120px;
+  border: 4px solid #bd9a59;
+  border-left-width: 13px;
+  background: #e7ddbb;
+  color: #23384b;
+  box-shadow: 7px 7px 0 #081522;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px;
+}
+.language-book i { font-size: 2rem; margin-bottom: 7px; }
+.language-book span { font-family: var(--pixel-font); font-size: 0.55rem; }
+.book-lines {
+  width: 60%;
+  border-top: 4px solid #aa946c;
+  border-bottom: 4px solid #aa946c;
+  height: 14px;
+  margin-top: 10px;
+}
+.terminal-window { width: 87%; background: #081625; border-color: #6386a4; }
+.terminal-body {
+  font-family: monospace;
+  font-size: 0.74rem;
+  line-height: 1.65;
+  padding: 11px;
+  color: #c5dcec;
+  white-space: nowrap;
+}
+.terminal-muted { color: #afc1d3; }
+.terminal-gold { color: var(--gold); }
+
+/* 6. DOVEDNOSTI A ZÁVĚR */
+.skills-section { margin-block: 2rem; }
+.skills-section .section-title { margin-left: 1rem; margin-bottom: 1.25rem; }
+.skill-tile {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.skill-tile i { font-size: 2.5rem; }
+.skill-html { color: #ee8657; }
+.skill-css { color: #78b4f4; }
+.skill-python { color: #e6c56e; }
+.skill-git { color: #ef8068; }
+
+/* Více pozadí se zapisuje oddělených čárkou. První je nahoře:
+   tmavý průhledný přechod zajistí čitelnost textu nad krajinou. */
+.contact-panel {
+  padding: 2.3rem 1rem;
+  background-image:
+    linear-gradient(rgba(9, 24, 39, 0.15), rgba(9, 24, 39, 0.35)),
+    url("assets/images/pixel-landscape.png");
+  background-size: cover;
+  background-position: center;
+}
+.contact-panel h2 {
+  font-family: var(--pixel-font);
+  font-size: clamp(0.95rem, 2vw, 1.3rem);
+  color: var(--green);
+  line-height: 1.8;
+  text-shadow: 2px 2px 0 #091827;
+}
+.contact-panel p { color: #e2e7ee; }
+.site-footer {
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.7rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+}
+.footer-dot { color: var(--green); padding-inline: 0.45rem; }
+.footer-note { color: var(--muted); }
+.validator-link {
+  padding: 0.4rem 0.65rem;
+  color: #dce4ef;
+  border: 1px solid var(--border-light);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.validator-link:hover { color: var(--green); border-color: var(--green); }
+.school-intro { padding-block: 3rem 2rem; }
+.school-intro h1 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+.school-projects { padding-bottom: 2rem; }
+.school-projects .project-card { padding: 1rem; }
+
+/* 7. RESPONZIVITA. @media spustí pravidla jen při splnění podmínky.
+   Bootstrap lg začíná na 992px. Pod ním se hlavička zalomí a hero
+   má obrázek pod textem. Šířky sloupců dál obstarává Bootstrap. */
+@media (max-width: 991.98px) {
+  .site-nav { justify-content: center; }
+  .hero { padding-top: 2.5rem; }
+  .hero-art { max-width: 21rem; }
+  .nav-github { margin-left: 0.3rem; }
+}
+@media (max-width: 575.98px) {
+  .container { padding-inline: 1.25rem; }
+  .brand { font-size: 0.7rem; }
+  .site-nav .nav { justify-content: center; column-gap: 0; }
+  .site-nav .nav-link { padding-inline: 0.55rem; font-size: 0.78rem; }
+  .site-nav .nav-link i { display: none; }
+  .nav-github { display: none; } /* Odkaz GitHub zůstává v úvodu a patičce stránky. */
+  .hero { padding-block: 2.4rem 2.5rem; }
+  .eyebrow { font-size: 0.55rem; }
+  .about-panel,
+  .projects-panel { padding: 1.25rem; }
+  .section-title { font-size: 0.85rem; }
+  .section-number { margin-right: 0.15rem; }
+  .project-art { height: 180px; }
+  .skill-tile { gap: 0.65rem; padding: 0.7rem; font-size: 0.8rem; }
+  .skill-tile i { font-size: 2rem; }
+  .contact-panel { padding: 2rem 1.1rem; }
+  .site-footer { width: calc(100% - 2.5rem); padding-inline: 0; text-align: center; }
+  .footer-note { display: block; }
+  .footer-dot { display: none; }
+}
+
+/* Respektujeme systémové omezení pohybu: vypneme plynulé posouvání
+   i barevný přechod tlačítek, který ve výchozím stavu dodává Bootstrap. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
