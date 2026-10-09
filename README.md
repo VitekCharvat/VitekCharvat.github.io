@@ -1,4 +1,6 @@
 
+## URL: https://vitekcharvat.github.io
+
 ## Soubory
 
 - `PORTFOLIO.md`: popis portfolia, technologie a návod ke spuštění.
@@ -46,3 +48,10 @@ Bootstrap a Font Awesome jsou cizí knihovny, vlastní pravidla upravuj v `style
 - Vlastní CSS: W3C CSS Validator, profil CSS3 SVG, 0 chyb a 0 varování. Výsledek je v `docs/css-validation.xml`.
 - Prohlížeč: zkontrolované desktopové rozložení 1280 px a mobilní šířky 390 a 320 px; žádné vodorovné přetékání. Přechod na školní projekty a zpět funguje. Konzole nehlásila chyby ani varování.
 - V dokumentu nejsou žádné skripty. Všechny čtyři externí odkazy na konkrétní projekty odpovídaly úspěšně.
+
+
+## Použití AI
+
+Bylo použito AI | [GPT-6 Astra](https://chatgpt.com/s/cx_6ac7fca7abec8191a3a4ad97ed4f1198)
+
+Odkaz vede na veřejně sdílený snímek této konverzace. Sdílený snímek se automaticky neaktualizuje o další zprávy. Pixelové ilustrace vznikly pomocí vestavěného nástroje ImageGen.
