@@ -1,57 +1,39 @@
+# Portfolio Víta Charváta
 
 ## URL: https://vitekcharvat.github.io
 
+Osobní portfolio podle návrhu B2 „Horské jezero“. Zadání je v `PRD.md`, podrobnější popis v `PORTFOLIO.md`.
+
 ## Soubory
 
-- `PORTFOLIO.md`: popis portfolia, technologie a návod ke spuštění.
-
-- `index.html`: hlavní portfolio.
-- `skolni-projekty.html`: samostatný přehled školních prací.
-- `style.css`: vlastní vzhled a české komentáře k náročnějším pravidlům.
-- `docs/CSS-PRUVODCE.md`: vysvětlení Bootstrapu a CSS na konkrétních příkladech.
-- `assets/images/`: pixelové ilustrace.
-- `assets/navrh/`: schválený obrázkový návrh.
-- `assets/nahledy/`: snímky hotové stránky na počítači a mobilu.
-- `assets/favicon.svg`: malá ikona terminálu do záložky prohlížeče.
-- `assets/OBRAZKY.md`: původ obrázků a zadání použitá k jejich tvorbě.
-
-Všechny obrazové soubory jsou uvnitř `assets`. Náhledy v kartách jsou dekorativní HTML/CSS ilustrace, nikoli skutečné screenshoty aplikací. Používají stejnou pixelovou krajinu z `assets/images`.
+- `index.html`: hlavní stránka (úvod s malbou, Projekty, O mně, Kontakt).
+- `skolni-projekty.html`: podstránka Další projekty.
+- `404.html`: stránka pro neexistující adresu (GitHub Pages ji použije sám).
+- `style.css`: celý vlastní vzhled s českými komentáři.
+- `sitemap.xml`, `robots.txt`: pro vyhledávače.
+- `assets/images/`: malba B2 ve WebP a náhled pro sdílení `og-image.jpg`.
+- `assets/src/hero-jezero.svg`: zdroj malby.
+- `assets/favicon.svg`: ikona v záložce.
+- `assets/OBRAZKY.md`: původ obrázků a jak je vyrobit znovu.
+- `docs/navrh-b2.html`: referenční mockup z plátna (není součást webu).
+- `googlea39b896c1462c2f5.html`: ověření webu pro Google Search Console, nemazat.
 
 ## Použité knihovny
 
-- [Bootstrap 5.3.8](https://getbootstrap.com/docs/5.3/getting-started/introduction/): CSS mřížka, karty, tlačítka, rozestupy a pomocné třídy.
-- Google Fonts: [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) pro herní nadpisy a [Inter](https://fonts.google.com/specimen/Inter) pro běžné texty.
-- [Font Awesome Free 6.7.2](https://fontawesome.com/): ikony načítané přes CSS, bez JavaScriptového kitu.
+- [Bootstrap 5.3.8](https://getbootstrap.com/docs/5.3/getting-started/introduction/), jen CSS: kontejner, rozestupy, pomocné třídy.
+- Google Fonts: [Newsreader](https://fonts.google.com/specimen/Newsreader) pro nadpisy, [Figtree](https://fonts.google.com/specimen/Figtree) pro text.
+- [Font Awesome Free 6.7.2](https://fontawesome.com/): ikony GitHub, obálka a šipka ven.
 
-Na webu není žádný `<script>`, událostní obsluha ani závislost na JavaScriptu. Mobilní menu je stále viditelné a zalamuje se. Efekty najetí myší a plynulý posun obstarává CSS. Nastavení systému pro omezení pohybu se respektuje.
+Na webu není žádný `<script>`.
 
-## Co upravit
+## Validace
 
-- Jméno a texty: přímo v HTML.
-- Barvy: proměnné v `:root` na začátku `style.css`.
-- Obrázky: v `assets/images`; při změně názvu uprav také cesty v HTML nebo CSS.
-- Projekty: změň obsah jednotlivých `<article>` a jejich `href`. Odkazy vedou na existující veřejné práce, nikoli na smyšleného správce úkolů z ukázkového návrhu.
-- Nový školní projekt: přidej další Bootstrap sloupec s kartou do `skolni-projekty.html`.
-- Rok v patičce je záměrně statický, mění se ručně.
+Tlačítka Ověřit HTML a Ověřit CSS v patičce spustí W3C validaci zveřejněné stránky v nové kartě.
 
-## Validace v patičce
-
-Odkaz **Ověřit HTML** rovnou spustí W3C Nu kontrolu adresy `https://vitekcharvat.github.io/`.
-
-Odkaz **Ověřit CSS** rovnou spustí W3C CSS validátor pro stejnou adresu s profilem CSS3 SVG. Oba odkazy otevírají novou kartu a ověřují aktuálně zveřejněnou verzi webu, nikoli místní soubory.
-
-Bootstrap a Font Awesome jsou cizí knihovny, vlastní pravidla upravuj v `style.css`.
-
-## Výsledek kontroly (8. října 2026)
-
-- Oba HTML soubory: W3C Nu, žádné chyby ani varování. Výsledky jsou v `docs/*.validation.json`.
-- Vlastní CSS: W3C CSS Validator, profil CSS3 SVG, 0 chyb a 0 varování. Výsledek je v `docs/css-validation.xml`.
-- Prohlížeč: zkontrolované desktopové rozložení 1280 px a mobilní šířky 390 a 320 px; žádné vodorovné přetékání. Přechod na školní projekty a zpět funguje. Konzole nehlásila chyby ani varování.
-- V dokumentu nejsou žádné skripty. Všechny čtyři externí odkazy na konkrétní projekty odpovídaly úspěšně.
-
+Kontrola 27. 10. 2026: všechny tři HTML soubory W3C Nu bez chyb i varování, `style.css` W3C CSS Validator (CSS3 + SVG) bez chyb. Stránka nepřetéká do strany při šířkách 320, 390, 768 a 1440 px.
 
 ## Použití AI
 
-Bylo použito AI | [GPT-6 Astra](https://chatgpt.com/s/cx_6ac7fca7abec8191a3a4ad97ed4f1198)
+Bylo použito AI | [Claude](https://claude.ai/) (nový web, 2026)
 
-Odkaz vede na veřejně sdílený snímek této konverzace. Sdílený snímek se automaticky neaktualizuje o další zprávy. Pixelové ilustrace vznikly pomocí vestavěného nástroje ImageGen.
+Původní pixelová verze webu vznikla s pomocí ChatGPT: [GPT-6 Astra](https://chatgpt.com/s/cx_6ac7fca7abec8191a3a4ad97ed4f1198). Sdílený snímek konverzace se automaticky neaktualizuje.
