@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SITEMAP: seznam stránek webu pro vyhledávače (Google, Seznam, Bing).
+  Proč tu je: vyhledávač nemusí stránky hledat jen přes odkazy, rovnou
+  tady vidí, které existují a kdy se naposledy změnily (lastmod).
+  Web se díky tomu rychleji a spolehlivěji dostane do výsledků hledání.
+  Kdy upravit: když přidáš nebo smažeš stránku, nebo ji výrazně změníš
+  (pak přepiš lastmod na dnešní datum ve tvaru RRRR-MM-DD).
+  Stránka 404.html sem nepatří, není to obsah, který má jít najít.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vitekcharvat.github.io/</loc>

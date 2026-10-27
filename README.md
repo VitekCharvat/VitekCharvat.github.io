@@ -34,6 +34,6 @@ Kontrola 27. 10. 2026: všechny tři HTML soubory W3C Nu bez chyb i varování, 
 
 ## Použití AI
 
-Bylo použito AI | [Claude](https://claude.ai/) (nový web, 2026)
+Bylo použito AI | [CITACE](citace.md)
 
-Původní pixelová verze webu vznikla s pomocí ChatGPT: [GPT-6 Astra](https://chatgpt.com/s/cx_6ac7fca7abec8191a3a4ad97ed4f1198). Sdílený snímek konverzace se automaticky neaktualizuje.
+Odkaz v patičce webu vede na `citace.md` na GitHubu. Tam jsou odkazy na všechny konverzace s AI a další zdroje, doplňují se ručně.

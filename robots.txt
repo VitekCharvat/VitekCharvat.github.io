@@ -1,4 +1,12 @@
+# ROBOTS.TXT: pravidla pro roboty vyhledávačů (Googlebot apod.).
+# Robot si tenhle soubor přečte jako první, než začne web procházet.
+# Proč tu je: říká, co smí robot procházet, a ukazuje mu, kde je sitemap.
+# Bez něj by robot procházel taky, ale takhle sitemap najde hned.
+
+# User-agent: * znamená „platí pro všechny roboty“.
+# Allow: / znamená „smíš procházet celý web“.
 User-agent: *
 Allow: /
 
+# Kde najde seznam všech stránek (soubor sitemap.xml ve stejné složce).
 Sitemap: https://vitekcharvat.github.io/sitemap.xml
