@@ -1,25 +1,25 @@
 <!doctype html>
-<html lang="cs">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vít Charvát | Programuju weby a malé aplikace</title>
-    <meta name="description" content="Portfolio Víta Charváta. Weby v HTML a CSS, malé programy v Pythonu a firemní web Špatní Kluci.">
+    <title>Vít Charvát | I build websites and small apps</title>
+    <meta name="description" content="Portfolio of Vít Charvát. Websites in HTML and CSS, small Python programs and the Špatní Kluci company website.">
     <meta name="theme-color" content="#26323A">
     <link rel="canonical" href="https://vitekcharvat.github.io/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
     <!-- Open Graph: náhled odkazu při sdílení (Messenger, Discord, LinkedIn…) -->
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Vít Charvát">
-    <meta property="og:title" content="Vít Charvát | Programuju weby a malé aplikace">
-    <meta property="og:description" content="Weby v HTML a CSS, malé programy v Pythonu a firemní web Špatní Kluci.">
+    <meta property="og:title" content="Vít Charvát | I build websites and small apps">
+    <meta property="og:description" content="Websites in HTML and CSS, small Python programs and the Špatní Kluci company website.">
     <meta property="og:url" content="https://vitekcharvat.github.io/">
     <meta property="og:image" content="https://vitekcharvat.github.io/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Malba: stůl s notebookem před horským jezerem, ve kterém se zrcadlí vrcholky hor.">
+    <meta property="og:image:alt" content="Painting: a desk with a laptop in front of a mountain lake reflecting the peaks.">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Bootstrap jen jako CSS: kontejner, rozestupy a pomocné třídy. -->
@@ -32,17 +32,17 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <a class="skip-link" href="#projekty">Přeskočit na projekty</a>
+    <a class="skip-link" href="#projekty">Skip to projects</a>
 
     <header class="hlavicka hlavicka-pres-malbu na-nebi">
       <div class="container hlavicka-obsah">
         <a class="znacka" href="#nahoru">Vít Charvát</a>
         <!-- Menu se na mobilu jen zalomí, nepotřebuje hamburger ani JavaScript. -->
-        <nav aria-label="Hlavní navigace">
+        <nav aria-label="Main navigation">
           <ul class="navigace">
-            <li><a href="#projekty">Projekty</a></li>
-            <li><a href="#o-mne">O mně</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="#projekty">Projects</a></li>
+            <li><a href="#o-mne">About</a></li>
+            <li><a href="#kontakt">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -55,15 +55,15 @@
           <!-- Prohlížeč si sám vybere výřez (mobil / desktop) a velikost. -->
           <picture>
             <source media="(max-width: 760px)" srcset="assets/images/hero-jezero-mobil-720.webp 720w, assets/images/hero-jezero-mobil-1080.webp 1080w" sizes="100vw" width="720" height="960">
-            <img src="assets/images/hero-jezero-1440.webp" srcset="assets/images/hero-jezero-960.webp 960w, assets/images/hero-jezero-1440.webp 1440w, assets/images/hero-jezero-2880.webp 2880w" sizes="100vw" width="1440" height="960" alt="Malba: ranní výhled od stolu s notebookem na horské jezero, ve kterém se zrcadlí vrcholky hor." fetchpriority="high">
+            <img src="assets/images/hero-jezero-1440.webp" srcset="assets/images/hero-jezero-960.webp 960w, assets/images/hero-jezero-1440.webp 1440w, assets/images/hero-jezero-2880.webp 2880w" sizes="100vw" width="1440" height="960" alt="Painting: a morning view from a desk with a laptop out to a mountain lake reflecting the peaks." fetchpriority="high">
           </picture>
         </div>
         <div class="container uvod-text">
           <div class="uvod-text-blok">
-            <h1 id="uvod-nadpis">Programuju weby a malé aplikace.</h1>
-            <p class="uvod-popis">Jsem Vít Charvát. Píšu v HTML, CSS a Pythonu, a protože jsem dřív kreslil, záleží mi i na tom, jak věci vypadají.</p>
+            <h1 id="uvod-nadpis">I build websites and small apps.</h1>
+            <p class="uvod-popis">I'm Vít Charvát. I write HTML, CSS and Python, and because I used to draw, I also care about how things look.</p>
             <div class="uvod-akce">
-              <a class="tlacitko tlacitko-plne" href="#projekty">Projekty</a>
+              <a class="tlacitko tlacitko-plne" href="#projekty">Projects</a>
               <a class="odkaz-github" href="https://github.com/VitekCharvat"><i class="fa-brands fa-github ikona" aria-hidden="true"></i>GitHub</a>
             </div>
           </div>
@@ -71,13 +71,13 @@
       </section>
 
       <section id="projekty" class="container sekce-projekty" aria-labelledby="projekty-nadpis">
-        <h2 id="projekty-nadpis" class="nadpis-sekce">Projekty</h2>
+        <h2 id="projekty-nadpis" class="nadpis-sekce">Projects</h2>
         <ul class="karty">
           <li>
             <article class="karta">
-              <p class="karta-stitek">Firemní web, běží naostro</p>
+              <p class="karta-stitek">Company website, live</p>
               <h3>Špatní Kluci</h3>
-              <p class="karta-popis">Web pro ostravskou firmu, která dodává komunikační technologie profesionálům. Návrh, kód i nasazení jsem dělal sám.</p>
+              <p class="karta-popis">A website for an Ostrava company that supplies communication technology to professionals. I handled the design, code and deployment on my own.</p>
               <div class="karta-pata">
                 <span class="karta-technologie">HTML, CSS</span>
                 <a class="odkaz-akcent" href="https://spatnikluci.cz/">spatnikluci.cz<i class="fa-solid fa-arrow-up-right-from-square ikona-ven" aria-hidden="true"></i></a>
@@ -86,53 +86,53 @@
           </li>
           <li>
             <article class="karta">
-              <p class="karta-stitek">Widget pro iPhone</p>
-              <h3>Bakaláři rozvrh</h3>
-              <p class="karta-popis">Rozvrh z Bakalářů přímo na ploše iPhonu. Aktuální hodina s odpočtem, učebna, suplování a offline režim.</p>
+              <p class="karta-stitek">iPhone widget</p>
+              <h3>Bakaláři Timetable</h3>
+              <p class="karta-popis">Your Bakaláři school timetable right on the iPhone home screen. Current lesson with a countdown, classroom, substitutions and offline mode.</p>
               <div class="karta-pata">
                 <span class="karta-technologie">JavaScript, Scriptable</span>
-                <a class="odkaz-akcent" href="https://github.com/VitekCharvat/bakalari-rozvrh-widget"><i class="fa-brands fa-github ikona" aria-hidden="true"></i>Otevřít na GitHubu<span class="visually-hidden"> Bakaláři rozvrh</span></a>
+                <a class="odkaz-akcent" href="https://github.com/VitekCharvat/bakalari-rozvrh-widget"><i class="fa-brands fa-github ikona" aria-hidden="true"></i>Open on GitHub<span class="visually-hidden"> Bakaláři Timetable</span></a>
               </div>
             </article>
           </li>
           <li>
             <article class="karta">
-              <p class="karta-stitek">Školní web</p>
-              <h3>Programovací jazyky</h3>
-              <p class="karta-popis">V čem se programují hry, AI, weby nebo mobilní aplikace, každý obor s ukázkou kódu.</p>
+              <p class="karta-stitek">School website</p>
+              <h3>Programming Languages</h3>
+              <p class="karta-popis">Which languages are used for games, AI, websites and mobile apps, with a code sample for each field.</p>
               <div class="karta-pata">
                 <span class="karta-technologie">HTML, CSS</span>
-                <a class="odkaz-akcent" href="https://vitekcharvat.github.io/web-coding-languages/">Otevřít web<span class="visually-hidden"> Programovací jazyky</span><i class="fa-solid fa-arrow-up-right-from-square ikona-ven" aria-hidden="true"></i></a>
+                <a class="odkaz-akcent" href="https://vitekcharvat.github.io/web-coding-languages/">Open website<span class="visually-hidden"> Programming Languages</span><i class="fa-solid fa-arrow-up-right-from-square ikona-ven" aria-hidden="true"></i></a>
               </div>
             </article>
           </li>
           <li>
             <article class="karta">
-              <p class="karta-stitek">Experimenty</p>
-              <h3>Python projekty</h3>
-              <p class="karta-popis">Malé programy mimo prohlížeč.</p>
+              <p class="karta-stitek">Experiments</p>
+              <h3>Python Projects</h3>
+              <p class="karta-popis">Small programs that run outside the browser.</p>
               <div class="karta-pata">
                 <span class="karta-technologie">Python</span>
-                <a class="odkaz-akcent" href="https://github.com/VitekCharvat/Small-Python-Projects"><i class="fa-brands fa-github ikona" aria-hidden="true"></i>Otevřít na GitHubu<span class="visually-hidden"> Python projekty</span></a>
+                <a class="odkaz-akcent" href="https://github.com/VitekCharvat/Small-Python-Projects"><i class="fa-brands fa-github ikona" aria-hidden="true"></i>Open on GitHub<span class="visually-hidden"> Python Projects</span></a>
               </div>
             </article>
           </li>
         </ul>
         <div class="dalsi-projekty">
-          <a class="tlacitko tlacitko-obrys" href="skolni-projekty.html">Další projekty</a>
+          <a class="tlacitko tlacitko-obrys" href="skolni-projekty.html">More projects</a>
         </div>
       </section>
 
       <section id="o-mne" class="container sekce o-mne" aria-labelledby="o-mne-nadpis">
-        <h2 id="o-mne-nadpis" class="nadpis-sekce">O mně</h2>
+        <h2 id="o-mne-nadpis" class="nadpis-sekce">About me</h2>
         <div class="o-mne-text">
-          <p class="o-mne-hlavni">Studuju a programuju. Kreslení mě naučilo dívat se na celek, a stejně se dneska dívám na web: co uvidíš první, kam se podíváš potom a kde máš kliknout.</p>
-          <p class="o-mne-dalsi">Pracuju s HTML, CSS, Pythonem, Gitem a GitHubem.</p>
+          <p class="o-mne-hlavni">I study and I code. Drawing taught me to look at the whole picture, and that is how I look at websites today: what you see first, where your eyes go next and where you should click.</p>
+          <p class="o-mne-dalsi">I work with HTML, CSS, Python, Git and GitHub.</p>
         </div>
       </section>
 
       <section id="kontakt" class="container sekce kontakt" aria-labelledby="kontakt-nadpis">
-        <h2 id="kontakt-nadpis">Napiš mi</h2>
+        <h2 id="kontakt-nadpis">Get in touch</h2>
         <div class="kontakt-odkazy">
           <a class="kontakt-email" href="mailto:vitcharvat08@gmail.com"><i class="fa-solid fa-envelope ikona" aria-hidden="true"></i>vitcharvat08@gmail.com</a>
           <a class="kontakt-github" href="https://github.com/VitekCharvat"><i class="fa-brands fa-github ikona" aria-hidden="true"></i>github.com/VitekCharvat</a>
@@ -142,10 +142,10 @@
 
     <footer class="container paticka">
       <div class="paticka-obsah">
-        <p><span class="paticka-autor">© 2026 Vít Charvát</span><span class="paticka-oddelovac" aria-hidden="true">·</span>Bylo použito AI | <a class="paticka-ai" href="https://github.com/VitekCharvat/VitekCharvat.github.io/blob/main/docs/citace.md" target="_blank" rel="noopener noreferrer">CITACE<span class="visually-hidden"> (nová karta)</span></a></p>
+        <p><span class="paticka-autor">© 2026 Vít Charvát</span><span class="paticka-oddelovac" aria-hidden="true">·</span>AI was used | <a class="paticka-ai" href="https://github.com/VitekCharvat/VitekCharvat.github.io/blob/main/docs/citace.md" target="_blank" rel="noopener noreferrer">CITATIONS<span class="visually-hidden"> (opens in a new tab)</span></a></p>
         <div class="validace">
-          <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2F" target="_blank" rel="noopener noreferrer">Ověřit HTML<span class="visually-hidden"> ve W3C validátoru (nová karta)</span></a>
-          <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2F&amp;profile=css3svg" target="_blank" rel="noopener noreferrer">Ověřit CSS<span class="visually-hidden"> ve W3C validátoru (nová karta)</span></a>
+          <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2F" target="_blank" rel="noopener noreferrer">Validate HTML<span class="visually-hidden"> with the W3C validator (opens in a new tab)</span></a>
+          <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2F&amp;profile=css3svg" target="_blank" rel="noopener noreferrer">Validate CSS<span class="visually-hidden"> with the W3C validator (opens in a new tab)</span></a>
         </div>
       </div>
     </footer>
