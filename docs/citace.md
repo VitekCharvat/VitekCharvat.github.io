@@ -9,7 +9,7 @@ Seznam AI nástrojů a zdrojů použitých při tvorbě webu. Na tenhle soubor v
 ## AI
 
 - Nový web desing, Claude [Opus 5.5](https://claude.ai/share/54ca308f-8d61-418b-a228-79f3fea652cc)
-- Nový web coding, Claude [Opus 5.5](docs/portfolio-redesing-konverzace.md)
+- Nový web coding, Claude [Opus 5.5](portfolio-redesing-konverzace.md)
 - Původní pixelová verze, ChatGPT [GPT-6 Astra](https://chatgpt.com/s/cx_6ac7fca7abec8191a3a4ad97ed4f1198)
 
 ## Knihovny a písma
@@ -34,7 +34,7 @@ A list of AI tools and sources used to build the website. The "CITATIONS" link i
 ## AI
 
 - New website design, Claude [Opus 5.5](https://claude.ai/share/54ca308f-8d61-418b-a228-79f3fea652cc)
-- New website coding, Claude [Opus 5.5](docs/portfolio-redesing-konverzace.md)
+- New website coding, Claude [Opus 5.5](portfolio-redesing-konverzace.md)
 - Original pixel version, ChatGPT [GPT-6 Astra](https://chatgpt.com/s/cx_6ac7fca7abec8191a3a4ad97ed4f1198)
 
 ## Libraries and fonts
