@@ -34,6 +34,6 @@ Kontrola 27. 10. 2026: všechny tři HTML soubory W3C Nu bez chyb i varování, 
 
 ## Použití AI
 
-Bylo použito AI | [CITACE](citace.md)
+Bylo použito AI | [CITACE](docs/citace.md)
 
 Odkaz v patičce webu vede na `citace.md` na GitHubu. Tam jsou odkazy na všechny konverzace s AI a další zdroje, doplňují se ručně.
