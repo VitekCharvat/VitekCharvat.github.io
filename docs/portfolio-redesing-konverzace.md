@@ -1,6 +1,6 @@
  ▐▛███▛█   Claude Code v2.1.310
 ▝▜██████▀  Opus 5.5 · Claude Pro
- ▝▝   ▝▝   C:\Cowork-OS\School\PVA3\VitekCharvat.github.io
+ ▝▝   ▝▝  
 
   Sonnet 5.5 is here, and it's faster and excels at well-scoped tasks. Opus 5.5 is still your default. Switch with /model.
 
