@@ -19,13 +19,16 @@
   --svetla: #eff0f1;
   --svetla-text: #18191b;
   --svetla-tlumeny: #55575b;
+  --plocha-2: #2e3034;
   --nebe: #1a1c1f;
 
-  /* pět velikostí písma, víc jich na stránce není */
+  /* šest velikostí písma: malá, text, úvodní odstavec, jména projektů
+     a kontakt, nadpisy sekcí a jméno přes celou šířku */
   --vel-mala: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
   --vel-text: clamp(1.125rem, 1.06rem + 0.2vw, 1.1875rem);
-  --vel-uvod: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
-  --vel-nadpis: clamp(2.5rem, 1.6rem + 3.6vw, 5rem);
+  --vel-uvod: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  --vel-stredni: clamp(1.875rem, 1.3rem + 1.9vw, 2.75rem);
+  --vel-nadpis: clamp(2.25rem, 1.4rem + 3vw, 4rem);
   --vel-monument: 20.4vw;
 
   /* okraje a rozestupy */
@@ -47,12 +50,7 @@
   --bs-gutter-x: 2rem;
 }
 
-body {
-  background: var(--pozadi);
-  color: var(--text);
-  letter-spacing: -0.005em;
-  font-kerning: normal;
-}
+body { background: var(--pozadi); color: var(--text); letter-spacing: -0.005em; font-kerning: normal; }
 
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
@@ -112,6 +110,11 @@ img { display: block; max-width: 100%; height: auto; }
   .tlacitko:hover .fa-arrow-right, .tlacitko:hover .fa-arrow-down { transform: translateX(3px); }
 }
 .tlacitko i { transition: transform 240ms var(--ease-out); }
+/* Menší šedé tlačítko pro vedlejší akci (More projects). */
+.tlacitko-druhe { min-height: 44px; padding: 0 18px; background: var(--plocha-2); color: var(--text); font-size: var(--vel-mala); }
+@media (hover: hover) and (pointer: fine) {
+  .tlacitko-druhe:hover { background: #3a3d42; color: var(--text); }
+}
 
 /* 2. ÚVOD: kresba nahoře, jméno dole -------------------------------- */
 /* Mřížka úvodu: navigace / volné místo / řádek s větou / jméno.
@@ -182,36 +185,47 @@ img { display: block; max-width: 100%; height: auto; }
 main { position: relative; z-index: 1; background: var(--pozadi); }
 .sekce { padding-top: var(--mezera-sekce); }
 .nadpis-sekce {
-  font-size: var(--vel-uvod);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin-bottom: 48px;
-}
-
-/* 3a. PROJEKTY: velká jména pod sebou, vpravo rámeček s náhledem.
-   Najetí myší nebo klávesnicí na projekt vymění obrázek v rámečku.
-   Funguje to přes :has(), bez JavaScriptu. */
-.projekty-mrizka { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 var(--bs-gutter-x); }
-.projekty-seznam { display: grid; grid-template-columns: minmax(0, 1fr); gap: 56px; }
-.projekt-obrazek { aspect-ratio: 16 / 10; overflow: hidden; margin-bottom: 18px; background: var(--plocha); }
-.projekt-obrazek img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
-.projekt-hlava { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 20px; }
-.projekt-nazev {
   font-size: var(--vel-nadpis);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.04em;
-  padding-block: 10px 6px;
+  margin-bottom: 56px;
+}
+/* Sekce s vlastním barevným polem: změna barvy ji jasně oddělí od sousedů. */
+.sekce-pole { padding-block: var(--mezera-sekce); }
+.sekce + .sekce-pole { margin-top: var(--mezera-sekce); }
+.pole-plocha { background: var(--plocha); }
+.pole-svetle {
+  --text: var(--svetla-text);
+  --tlumeny: var(--svetla-tlumeny);
+  background: var(--svetla);
+  color: var(--text);
+}
+
+/* 3a. PROJEKTY: velká jména pod sebou, vpravo rámeček s náhledem.
+   Najetí myší nebo klávesnicí na projekt vymění obrázek v rámečku.
+   Funguje to přes :has(), bez JavaScriptu, pro nejvýš šest projektů. */
+.projekty-mrizka { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 var(--bs-gutter-x); }
+.projekty-seznam { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; }
+.projekt-obrazek { aspect-ratio: 16 / 10; overflow: hidden; margin-bottom: 18px; background: var(--plocha); }
+.projekt-obrazek img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+.projekt-hlava { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 20px; }
+.projekt-nazev {
+  font-size: var(--vel-stredni);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  padding-block: 8px 4px;
 }
 .projekt-nazev a { text-decoration: none; }
 .projekt-druh { font-size: var(--vel-mala); color: var(--tlumeny); }
 .projekt-popis { max-width: 46ch; margin-top: 8px; }
 .ramecek { display: none; }
+.projekty-sloupec .tlacitko-druhe { margin-top: 48px; }
 
 @media (min-width: 900px) and (hover: hover) and (pointer: fine) {
-  .projekty-mrizka { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); align-items: start; }
-  .projekty-seznam { gap: 40px; }
+  .projekty-mrizka { grid-template-columns: minmax(0, 5fr) minmax(0, 2fr); align-items: start; }
+  .projekty-seznam { gap: 32px; }
   .projekt-obrazek { display: none; }
   .projekt-nazev a { color: var(--tlumeny); transition: color var(--t-najeti) ease; }
   .projekt-popis { color: var(--tlumeny); transition: color var(--t-najeti) ease; }
@@ -248,9 +262,8 @@ main { position: relative; z-index: 1; background: var(--pozadi); }
   .projekty-mrizka:has(.projekt:nth-child(2):is(:hover, :focus-within)) .ramecek > :nth-child(2),
   .projekty-mrizka:has(.projekt:nth-child(3):is(:hover, :focus-within)) .ramecek > :nth-child(3),
   .projekty-mrizka:has(.projekt:nth-child(4):is(:hover, :focus-within)) .ramecek > :nth-child(4),
-  .projekty-mrizka:has(.projekt:nth-child(5):is(:hover, :focus-within)) .ramecek > :nth-child(5) {
-    opacity: 1;
-  }
+  .projekty-mrizka:has(.projekt:nth-child(5):is(:hover, :focus-within)) .ramecek > :nth-child(5),
+  .projekty-mrizka:has(.projekt:nth-child(6):is(:hover, :focus-within)) .ramecek > :nth-child(6) { opacity: 1; }
 }
 
 /* Widget Bakaláři: výřez skutečného rozhraní widgetu (tmavý režim iOS). */
@@ -325,31 +338,54 @@ main { position: relative; z-index: 1; background: var(--pozadi); }
 }
 
 /* 3b. O MNĚ: fakta vlevo, široký odstavec od třetiny šířky ------------ */
-.o-mne-radek + .o-mne-radek { margin-top: 120px; }
-.o-mne .nadpis-sekce { margin-bottom: 32px; }
+.o-mne-radek + .o-mne-radek { margin-top: 96px; }
+#o-mne .nadpis-sekce { margin-bottom: 32px; }
 .fakta { display: grid; gap: 20px; font-size: var(--vel-mala); }
 .fakta dt { font-weight: 400; color: var(--tlumeny); }
-.o-mne-odstavec { max-width: 34em; font-size: var(--vel-uvod); line-height: 1.35; letter-spacing: -0.01em; }
+.odstavec-velky { max-width: 34em; font-size: var(--vel-uvod); line-height: 1.35; letter-spacing: -0.01em; }
 .o-mne-slovo { font-size: var(--vel-text); font-weight: 500; margin-bottom: 20px; }
 .zaznam { display: grid; gap: 10px; font-size: var(--vel-text); margin-bottom: 10px; }
 .zaznam li { display: flex; justify-content: space-between; gap: 16px; }
 .zaznam span { color: var(--tlumeny); text-align: right; font-variant-numeric: tabular-nums; }
 
-/* 3c. KONTAKT: řádky písma velikosti nadpisu, střídají dva tóny ------- */
+/* 3c. NÁSTROJE: mřížka 3 × 2, u každého nástroje projekty, kde je vidět. */
+.nastroje-hlava .nadpis-sekce { margin-bottom: 24px; }
+.nastroje {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 64px var(--bs-gutter-x);
+  margin-top: 72px;
+}
+.nastroj-nazev {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 12px;
+  margin-bottom: 12px;
+  font-size: var(--vel-uvod);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.nastroj-nazev span { font-size: var(--vel-mala); font-weight: 400; letter-spacing: 0; color: var(--tlumeny); }
+.nastroj p { max-width: 36ch; }
+.nastroj a { text-decoration-color: var(--tlumeny); }
+
+/* 3d. KONTAKT: řádky přes celou šířku, střídají dva tóny ------------- */
 .kontakt { margin-top: var(--mezera-sekce); }
+.sekce-pole + .kontakt { margin-top: 0; }
 .kontakt-radek {
   display: flex;
   align-items: flex-end;
-  min-height: clamp(96px, 10.5vw, 152px);
-  padding: 20px var(--okraj) clamp(16px, 1.6vw, 26px);
-  font-size: var(--vel-nadpis);
+  min-height: clamp(76px, 7.4vw, 112px);
+  padding: 20px var(--okraj) clamp(14px, 1.4vw, 22px);
+  font-size: var(--vel-stredni);
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.04em;
 }
 .kontakt li:nth-child(odd) { background: var(--plocha); }
 .kontakt-radek a { text-decoration-thickness: 0.04em; }
-.kontakt-pozdrav { gap: 0.3em; margin: 0; }
+.kontakt-pozdrav { gap: 0.3em; margin: 0; min-height: clamp(120px, 11vw, 168px); font-size: var(--vel-nadpis); font-weight: 500; }
 /* Čtvercové tlačítko se šipkou: otevře e-mail s předvyplněným předmětem. */
 .kontakt-sipka {
   display: inline-grid;
@@ -417,9 +453,11 @@ main { position: relative; z-index: 1; background: var(--pozadi); }
   .uvod-radek { grid-row: 4; flex-direction: column; align-items: flex-start; padding-bottom: 28px; }
   .o-mne-radek + .o-mne-radek { margin-top: 72px; }
   .fakta { margin-bottom: 40px; }
+  .nastroje { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px var(--bs-gutter-x); margin-top: 40px; }
 }
 @media (max-width: 599px) {
-  :root { --vel-nadpis: clamp(2.25rem, 1.2rem + 4vw, 2.5rem); --mezera-sekce: 96px; }
+  :root { --mezera-sekce: 96px; }
+  .nastroje { grid-template-columns: minmax(0, 1fr); }
   .navigace { padding-top: 12px; }
   .navigace ul { gap: 0 18px; }
   .vrstva img { object-position: 63% 100%; }
@@ -428,7 +466,8 @@ main { position: relative; z-index: 1; background: var(--pozadi); }
   .uvod-mala .monument { --vel-monument: 19vw; }
   .paticka-znacka { font-size: 23vw; white-space: normal; }
   .paticka-znacka span { display: block; }
-  .kontakt-radek { min-height: 84px; letter-spacing: -0.03em; }
+  .kontakt-radek { min-height: 72px; letter-spacing: -0.03em; }
+  .kontakt-pozdrav { min-height: 104px; }
 }
 
 /* 6. POHYB ----------------------------------------------------------

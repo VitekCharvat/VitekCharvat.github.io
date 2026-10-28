@@ -10,8 +10,8 @@ Osobní portfolio ve stylu „Opava za soumraku“: nahoře kresba Opavy od jihu
 
 ## Soubory
 
-- `index.html`: hlavní stránka (úvod s kresbou, Projects, About me, Contact).
-- `skolni-projekty.html`: podstránka More projects se školními weby a screenshoty.
+- `index.html`: hlavní stránka (úvod s kresbou, Projects, About me, Tools, Contact).
+- `skolni-projekty.html`: podstránka More projects se školními cvičeními (zatím Giggle) a screenshoty.
 - `404.html`: stránka pro neexistující adresu (GitHub Pages ji použije sám).
 - `style.css`: celý vlastní vzhled s českými komentáři.
 - `sitemap.xml`, `robots.txt`: pro vyhledávače.
@@ -61,8 +61,8 @@ A personal portfolio in the "Opava at dusk" style: at the top, a drawing of Opav
 
 ## Files
 
-- `index.html`: home page (intro with the drawing, Projects, About me, Contact).
-- `skolni-projekty.html`: the More projects subpage with school websites and screenshots.
+- `index.html`: home page (intro with the drawing, Projects, About me, Tools, Contact).
+- `skolni-projekty.html`: the More projects subpage with school exercises (Giggle for now) and screenshots.
 - `404.html`: page for addresses that don't exist (GitHub Pages uses it automatically).
 - `style.css`: all custom styling, with comments in Czech.
 - `sitemap.xml`, `robots.txt`: for search engines.

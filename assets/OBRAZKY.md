@@ -15,8 +15,8 @@ Všechny obrázky webu jsou ve složce `assets`. Vznikly 28. 10. 2026 pro nový 
 | `kresba/opava-pole.svg` | viewBox 2400 × 950 | 10 kB | vrstva 3: pole s brázdami, spodek má barvu stránky (#18191b) |
 | `images/projekty/spatnikluci.webp` | 1200 × 1500 px | 78 kB | náhled webu spatnikluci.cz |
 | `images/projekty/jazyky.webp` | 1200 × 1500 px | 58 kB | náhled webu Programming Languages |
-| `images/projekty/jazyky-obory.webp` | 1200 × 1500 px | 54 kB | Programming Languages, seznam oborů (podstránka) |
 | `images/projekty/giggle.webp` | 1200 × 1500 px | 22 kB | náhled Giggle |
+| `images/projekty/giggle-obrazky.webp` | 1200 × 1500 px | 23 kB | Giggle, hledání obrázků (podstránka) |
 | `images/projekty/giggle-hledani.webp` | 1200 × 1500 px | 28 kB | Giggle, pokročilé hledání (podstránka) |
 | `images/projekty/giggle-formular.webp` | 1200 × 1500 px | 47 kB | Giggle, stránka s formuláři (podstránka) |
 | `images/og-image.jpg` | 1200 × 630 px | 56 kB | náhled při sdílení odkazu (Open Graph) |
@@ -59,8 +59,8 @@ All website images are in the `assets` folder. They were made on 28 Oct 2026 for
 | `kresba/opava-pole.svg` | viewBox 2400 × 950 | 10 kB | layer 3: fields with furrows, the bottom is the page colour (#18191b) |
 | `images/projekty/spatnikluci.webp` | 1200 × 1500 px | 78 kB | preview of spatnikluci.cz |
 | `images/projekty/jazyky.webp` | 1200 × 1500 px | 58 kB | preview of the Programming Languages website |
-| `images/projekty/jazyky-obory.webp` | 1200 × 1500 px | 54 kB | Programming Languages, the list of fields (subpage) |
 | `images/projekty/giggle.webp` | 1200 × 1500 px | 22 kB | preview of Giggle |
+| `images/projekty/giggle-obrazky.webp` | 1200 × 1500 px | 23 kB | Giggle, image search (subpage) |
 | `images/projekty/giggle-hledani.webp` | 1200 × 1500 px | 28 kB | Giggle, advanced search (subpage) |
 | `images/projekty/giggle-formular.webp` | 1200 × 1500 px | 47 kB | Giggle, the forms page (subpage) |
 | `images/og-image.jpg` | 1200 × 630 px | 56 kB | link share preview (Open Graph) |
