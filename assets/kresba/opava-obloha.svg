@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 2400 950" preserveAspectRatio="xMidYMax slice">
+<style>@media (prefers-reduced-motion:no-preference){.ptaci{animation:let 70s linear infinite}.slunce{animation:zapad 14s cubic-bezier(.33,1,.68,1) both}}@keyframes let{from{transform:translateX(0)}to{transform:translateX(900px)}}@keyframes zapad{from{transform:translateY(-26px)}to{transform:none}}</style>
+<rect y="0" width="2400" height="331" fill="#1a1c1f"/>
+<rect y="330" width="2400" height="111" fill="#1e2023"/>
+<rect y="440" width="2400" height="81" fill="#232528"/>
+<rect y="520" width="2400" height="61" fill="#2b2d31"/>
+<rect y="580" width="2400" height="49" fill="#35383c"/>
+<rect y="628" width="2400" height="41" fill="#414448"/>
+<rect y="668" width="2400" height="53" fill="#505357"/>
+<g class="slunce">
+<circle cx="1660" cy="612" r="240" fill="#ff4a1f" opacity=".05"/>
+<circle cx="1660" cy="612" r="150" fill="#ff4a1f" opacity=".1"/>
+<circle cx="1660" cy="612" r="74" fill="#ff4a1f"/>
+</g>
+<circle cx="155" cy="266" r="1.6" fill="#9c9ea3" opacity="0.35"/>
+<circle cx="494" cy="183" r="2" fill="#9c9ea3" opacity="0.35"/>
+<circle cx="1822" cy="198" r="1.6" fill="#9c9ea3" opacity="0.5"/>
+<circle cx="852" cy="215" r="1.2" fill="#9c9ea3" opacity="0.5"/>
+<circle cx="1841" cy="119" r="2" fill="#9c9ea3" opacity="0.7"/>
+<circle cx="2364" cy="128" r="1.6" fill="#9c9ea3" opacity="0.35"/>
+<circle cx="118" cy="97" r="1.6" fill="#9c9ea3" opacity="0.5"/>
+<circle cx="2154" cy="97" r="1.6" fill="#9c9ea3" opacity="0.7"/>
+<circle cx="764" cy="214" r="2" fill="#9c9ea3" opacity="0.7"/>
+<circle cx="1301" cy="187" r="1.6" fill="#9c9ea3" opacity="0.7"/>
+<circle cx="2122" cy="195" r="1.2" fill="#9c9ea3" opacity="0.7"/>
+<circle cx="428" cy="180" r="1.6" fill="#9c9ea3" opacity="0.5"/>
+<circle cx="1869" cy="266" r="1.6" fill="#9c9ea3" opacity="0.5"/>
+<circle cx="962" cy="284" r="1.6" fill="#9c9ea3" opacity="0.5"/>
+<circle cx="2141" cy="202" r="1.2" fill="#9c9ea3" opacity="0.5"/>
+<circle cx="1202" cy="261" r="1.6" fill="#9c9ea3" opacity="0.35"/>
+<circle cx="442" cy="234" r="1.2" fill="#9c9ea3" opacity="0.5"/>
+<circle cx="1954" cy="148" r="2" fill="#9c9ea3" opacity="0.5"/>
+<circle cx="1333" cy="136" r="1.2" fill="#9c9ea3" opacity="0.35"/>
+<circle cx="2119" cy="201" r="1.6" fill="#9c9ea3" opacity="0.7"/>
+<circle cx="2303" cy="280" r="1.6" fill="#9c9ea3" opacity="0.5"/>
+<circle cx="1214" cy="261" r="1.6" fill="#9c9ea3" opacity="0.35"/>
+<circle cx="522" cy="81" r="1.2" fill="#9c9ea3" opacity="0.7"/>
+<circle cx="1287" cy="121" r="1.2" fill="#9c9ea3" opacity="0.35"/>
+<circle cx="1895" cy="84" r="1.2" fill="#9c9ea3" opacity="0.35"/>
+<circle cx="1973" cy="48" r="2" fill="#9c9ea3" opacity="0.7"/>
+<g class="ptaci">
+<path d="M820 410q7.199999999999999 -6 14.399999999999999 0q7.199999999999999 -6 14.399999999999999 0" fill="none" stroke="#18191b" stroke-width="2.64" stroke-linecap="round"/>
+<path d="M860 430q6 -5 12 0q6 -5 12 0" fill="none" stroke="#18191b" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M790 440q5.4 -4.5 10.8 0q5.4 -4.5 10.8 0" fill="none" stroke="#18191b" stroke-width="1.9800000000000002" stroke-linecap="round"/>
+<path d="M900 402q4.800000000000001 -4 9.600000000000001 0q4.800000000000001 -4 9.600000000000001 0" fill="none" stroke="#18191b" stroke-width="1.7600000000000002" stroke-linecap="round"/>
+</g>
+</svg>

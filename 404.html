@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Page not found | Vít Charvát</title>
-    <meta name="description" content="This page doesn't exist on Vít Charvát's website.">
+    <meta name="description" content="This page doesn't exist. Continue on the home page of Vít Charvát's portfolio.">
     <meta name="robots" content="noindex">
-    <meta name="theme-color" content="#26323A">
+    <meta name="theme-color" content="#18191b">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
-    <!-- Bootstrap jen jako CSS: kontejner, rozestupy a pomocné třídy. -->
+
+    <!-- Bootstrap jen jako CSS: mřížka (row, col-*) a třída visually-hidden. -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- Vlastní styl je poslední, takže přepíše výchozí vzhled Bootstrapu. -->
     <link rel="stylesheet" href="/style.css">
@@ -21,38 +22,78 @@
   <body>
     <a class="skip-link" href="#obsah">Skip to content</a>
 
-    <header class="hlavicka">
-      <div class="container hlavicka-obsah">
-        <a class="znacka" href="/index.html">Vít Charvát</a>
-        <nav aria-label="Main navigation">
-          <ul class="navigace">
-            <li><a href="/index.html#projekty">Projects</a></li>
-            <li><a href="/index.html#o-mne">About</a></li>
-            <li><a href="/index.html#kontakt">Contact</a></li>
-          </ul>
-        </nav>
+    <!-- 404: GitHub Pages ji ukáže sám u neexistující adresy, proto absolutní cesty. -->
+    <header class="uvod uvod-mala">
+      <div class="uvod-kresba" role="img" aria-label="Drawing of Opava at dusk, seen from the fields to the south.">
+        <div class="vrstva vrstva-obloha"><img src="/assets/kresba/opava-obloha.svg" alt="" width="2400" height="950" fetchpriority="high"></div>
+        <div class="vrstva vrstva-mesto"><img src="/assets/kresba/opava-mesto.svg" alt="" width="2400" height="950" fetchpriority="high"></div>
+        <div class="vrstva vrstva-pole"><img src="/assets/kresba/opava-pole.svg" alt="" width="2400" height="950"></div>
+      </div>
+
+      <nav class="navigace" aria-label="Main navigation">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/index.html#projekty">Projects</a></li>
+          <li><a href="/index.html#o-mne">About</a></li>
+          <li><a href="/index.html#kontakt">Contact</a></li>
+        </ul>
+      </nav>
+
+      <h1 class="monument monument-dlouhy"><span class="monument-slovo">Page not</span> <span class="monument-slovo">found</span></h1>
+      <div class="uvod-radek">
+        <p class="uvod-popis">The address is mistyped, or the page has been removed. Opava is still here, so try again from the home page.</p>
+        <a class="tlacitko" href="/index.html">Go to the home page<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       </div>
     </header>
 
     <main id="obsah">
-      <section class="container uvod-podstranky" aria-labelledby="chyba-nadpis">
-        <h1 id="chyba-nadpis">This page doesn't exist</h1>
-        <p class="uvod-podstranky-popis">The address is mistyped, or the page has been removed. Try again from the home page.</p>
-        <div class="zpet">
-          <a class="tlacitko tlacitko-obrys" href="/index.html">Go to the home page</a>
-          <a class="odkaz-akcent" href="/skolni-projekty.html">More projects</a>
-        </div>
+      <section class="kontakt kontakt-404" aria-labelledby="dal-nadpis">
+        <h2 id="dal-nadpis" class="kontakt-radek kontakt-pozdrav">Where to next <a class="kontakt-sipka" href="/index.html" aria-label="Go to the home page"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></h2>
+        <ul>
+          <li class="kontakt-radek"><a href="/index.html#projekty">Projects</a></li>
+          <li class="kontakt-radek"><a href="/skolni-projekty.html">More projects</a></li>
+          <li class="kontakt-radek"><a href="https://github.com/VitekCharvat">github.com/<wbr>VitekCharvat</a></li>
+        </ul>
       </section>
     </main>
 
-    <footer class="container paticka">
-      <div class="paticka-obsah">
-        <p><span class="paticka-autor">© 2026 Vít Charvát</span><span class="paticka-oddelovac" aria-hidden="true">·</span>AI was used | <a class="paticka-ai" href="https://github.com/VitekCharvat/VitekCharvat.github.io/blob/main/docs/citace.md" target="_blank" rel="noopener noreferrer">CITATIONS<span class="visually-hidden"> (opens in a new tab)</span></a></p>
-        <div class="validace">
-          <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2F404.html" target="_blank" rel="noopener noreferrer">Validate HTML<span class="visually-hidden"> with the W3C validator (opens in a new tab)</span></a>
-          <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2F404.html&amp;profile=css3svg" target="_blank" rel="noopener noreferrer">Validate CSS<span class="visually-hidden"> with the W3C validator (opens in a new tab)</span></a>
+    <footer class="paticka">
+      <div class="obal">
+        <div class="row paticka-sloupce">
+          <div class="col-6 col-lg-3">
+            <h2 class="paticka-nadpis">Pages</h2>
+            <ul>
+              <li><a href="/index.html#projekty">Projects</a></li>
+              <li><a href="/index.html#o-mne">About me</a></li>
+              <li><a href="/index.html#kontakt">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h2 class="paticka-nadpis">Elsewhere</h2>
+            <ul>
+              <li><a href="https://github.com/VitekCharvat">GitHub</a></li>
+              <li><a href="mailto:vitekcharvat08@gmail.com">E-mail</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h2 class="paticka-nadpis">Built with</h2>
+            <ul>
+              <li>HTML and CSS, no JavaScript</li>
+              <li>Bootstrap, Google Fonts</li>
+              <li>Font Awesome</li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h2 class="paticka-nadpis">Checks</h2>
+            <ul>
+              <li><a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2F404.html" target="_blank" rel="noopener noreferrer">Validate HTML<span class="visually-hidden"> with the W3C validator (opens in a new tab)</span></a></li>
+              <li><a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2F404.html&amp;profile=css3svg" target="_blank" rel="noopener noreferrer">Validate CSS<span class="visually-hidden"> with the W3C validator (opens in a new tab)</span></a></li>
+            </ul>
+          </div>
         </div>
       </div>
+      <p class="paticka-znacka" aria-hidden="true"><span>Vít</span> <span>Charvát</span></p>
+      <p class="paticka-pravni"><span>© 2026 Vít Charvát · The drawing of Opava is made in code</span><span>AI was used | <a href="https://github.com/VitekCharvat/VitekCharvat.github.io/blob/main/docs/citace.md" target="_blank" rel="noopener noreferrer">CITATIONS<span class="visually-hidden"> (opens in a new tab)</span></a></span></p>
     </footer>
   </body>
 </html>

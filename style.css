@@ -1,496 +1,494 @@
 /* ================================================================
-   PORTFOLIO B2 „HORSKÉ JEZERO“ | Vít Charvát
-   Bootstrap dává kontejner, rozestupy a pomocné třídy.
-   Tento soubor řeší celý vzhled: barvy, písma, úvod s malbou a karty.
-   Zadání je v PRD.md, obrázky popisuje assets/OBRAZKY.md.
+   PORTFOLIO „OPAVA ZA SOUMRAKU“ | Vít Charvát
+   Směr: jméno jako monument. Nahoře kresba Opavy od jihu, která se
+   po krocích tmavne, až z ní zbude jen barva stránky. Pod ní jméno přes
+   celou šířku. Celý web je jen HTML a CSS, žádný JavaScript.
+   Bootstrap dává mřížku (row, col-*) a pomocnou třídu visually-hidden.
    ================================================================ */
 
-/* 1. PROMĚNNÉ: barvu uložíme jednou do :root a pomocí var(--nazev)
-   ji použijeme kdekoli. Proměnné --bs-* přepisují výchozí Bootstrap. */
+/* 1. PROMĚNNÉ ---------------------------------------------------- */
 :root {
-  --stranka: #26323a;
-  --karta: #2e3b43;
-  --okraj: #3d4b53;
-  --okraj-svetly: #6e7e86;
-  --text: #eef0ee;
-  --tlumeny: #c4cdcf;
-  --tlumeny-2: #a3afb3;
-  --akcent: #f2c29b;
-  --nebe-text: #12202b;
-  --nebe-text-2: #1c2a35;
-  --nadpisy: "Newsreader", Georgia, "Times New Roman", serif;
-  --bs-body-font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --bs-body-font-size: 1.0625rem;
-  --bs-body-line-height: 1.6;
-  --bs-body-bg: var(--stranka);
+  /* barvy: grafit a výstražná oranžová */
+  --pozadi: #18191b;
+  --plocha: #222427;
+  --text: #eff0f1;
+  --tlumeny: #9c9ea3;
+  --akcent: #ff4a1f;
+  --akcent-silny: #ff6a45;
+  --akcent-text: #18191b;
+  --svetla: #eff0f1;
+  --svetla-text: #18191b;
+  --svetla-tlumeny: #55575b;
+  --plocha-2: #2e3034;
+  --nebe: #1a1c1f;
+
+  /* šest velikostí písma: malá, text, úvodní odstavec, jména projektů
+     a kontakt, nadpisy sekcí a jméno přes celou šířku */
+  --vel-mala: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
+  --vel-text: clamp(1.125rem, 1.06rem + 0.2vw, 1.1875rem);
+  --vel-uvod: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  --vel-stredni: clamp(1.875rem, 1.3rem + 1.9vw, 2.75rem);
+  --vel-nadpis: clamp(2.25rem, 1.4rem + 3vw, 4rem);
+  --vel-monument: 20.4vw;
+
+  /* okraje a rozestupy */
+  --okraj: clamp(20px, 2.4vw, 32px);
+  --mezera-sekce: clamp(104px, 12vw, 200px);
+
+  /* pohyb */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-stisk: 140ms;
+  --t-najeti: 180ms;
+
+  --pismo: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bs-body-font-family: var(--pismo);
+  --bs-body-font-size: var(--vel-text);
+  --bs-body-line-height: 1.5;
+  --bs-body-bg: var(--pozadi);
   --bs-body-color: var(--text);
-  --bs-link-color: var(--text);
-  --bs-link-color-rgb: 238, 240, 238;
-  --bs-link-hover-color: #ffffff;
-  --bs-link-hover-color-rgb: 255, 255, 255;
+  --bs-gutter-x: 2rem;
 }
 
-/* Plynulý posun jen pro ty, kdo nemají v systému omezený pohyb. */
+body { background: var(--pozadi); color: var(--text); letter-spacing: -0.005em; font-kerning: normal; }
+
 @media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 }
 
-body {
-  background: var(--stranka);
-}
-
-/* Bootstrap 5.3 mění barvu odkazů přes RGB proměnnou, tady ji jen sladíme. */
+/* Odkazy: podtržení se objeví při najetí, barva zůstává. */
 a {
-  color: var(--text);
-  text-underline-offset: 0.3em;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color var(--t-najeti) ease, color var(--t-najeti) ease;
 }
-a:hover {
-  color: #ffffff;
+@media (hover: hover) and (pointer: fine) {
+  a:hover { color: inherit; text-decoration-color: currentColor; }
 }
+a:focus-visible, .tlacitko:focus-visible { outline: 3px solid var(--akcent); outline-offset: 4px; }
 
-/* :focus-visible ukáže obrys jen při ovládání klávesnicí. */
-a:focus-visible {
-  outline: 3px solid var(--akcent);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
+h1, h2, h3, p, ul, dl, dd, figure { margin: 0; }
+ul { list-style: none; padding: 0; }
+img { display: block; max-width: 100%; height: auto; }
+::selection { background: var(--akcent); color: var(--akcent-text); }
 
-h1, h2, h3 {
-  font-family: var(--nadpisy);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-}
+/* Okraje stránky: všechny sekce používají stejný pár okrajů. */
+.obal { padding-inline: var(--okraj); }
 
-/* Bootstrap kontejner zužuje obsah po skocích. Tady je plynulý
-   až do 1280 px a má po stranách 24 px (na mobilu 20 px). */
-.container {
-  --bs-gutter-x: 3rem;
-  max-width: 1280px;
-}
-
-/* Kotvy (#projekty…) nesmí schovat nadpis pod horní okraj okna. */
-section[id] {
-  scroll-margin-top: 1.5rem;
-}
-
-/* Odkaz pro klávesnici: schovaný nad stránkou, objeví se po Tabu. */
 .skip-link {
   position: absolute;
-  top: -10rem;
-  left: 1rem;
+  left: var(--okraj);
+  top: -100px;
   z-index: 10;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
+  padding: 12px 18px;
   background: var(--akcent);
-  color: var(--nebe-text);
-  font-weight: 600;
-}
-.skip-link:focus {
-  top: 1rem;
-}
-
-/* Ovládací prvky mají aspoň 44 px na výšku, aby se do nich dalo trefit
-   i prstem. Odkazy s ikonou jsou inline-block s paddingem: u flexu by
-   se podtržení protáhlo i pod ikonu Font Awesome (ta je jen ozdoba). */
-.znacka, .navigace a, .validace a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-}
-.odkaz-akcent, .paticka-ai, .kontakt-odkazy a {
-  display: inline-block;
-  padding: 10px 0;
-}
-.ikona {
-  display: inline-block;
-  margin-right: 0.45em;
-}
-.ikona-ven {
-  display: inline-block;
-  margin-left: 0.4em;
-  font-size: 0.8em;
-}
-
-/* 2. HLAVIČKA: na úvodní stránce leží přes malbu (tmavý text na nebi),
-   na podstránkách stojí na tmavém pozadí (světlý text). */
-.hlavicka {
-  position: relative;
-  z-index: 2;
-}
-.hlavicka-pres-malbu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-.hlavicka-obsah {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem 1.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-.znacka {
-  font-family: var(--nadpisy);
-  font-size: 1.375rem;
-  font-weight: 600;
+  color: var(--akcent-text);
+  font-weight: 500;
   text-decoration: none;
 }
-.navigace {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 1.75rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-weight: 600;
-}
-.navigace a {
-  padding: 0 4px;
-  text-decoration: none;
-}
-.navigace a:hover {
-  text-decoration: underline;
-  text-underline-offset: 6px;
-}
+.skip-link:focus { top: 16px; }
 
-/* Tmavé barvy pro všechno, co leží na světlém nebi malby. */
-.na-nebi a {
-  color: #16222d;
-}
-.na-nebi a:hover {
-  color: #000000;
-}
-.na-nebi a:focus-visible {
-  outline-color: #16222d;
-}
-
-/* 3. ÚVOD S MALBOU: malba i text sdílejí jednu buňku mřížky,
-   takže text leží přes obrázek. Výška roste se šířkou okna podle
-   poměru malby 3 : 2, ale nikdy není nižší než 720 px ani vyšší než 940 px. */
-.uvod {
-  display: grid;
-  min-height: clamp(720px, 66.67vw, 940px);
-  background: linear-gradient(#6a8fb2, #6f93b5);
-}
-.uvod-malba, .uvod-text {
-  grid-area: 1 / 1;
-}
-.uvod-malba {
-  position: relative;
-}
-
-/* object-fit: cover vyplní plochu bez deformace, ořez je odspodu
-   ukotvený, aby stůl s notebookem zůstal vždy vidět. */
-.uvod-malba img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 100%;
-}
-.uvod-text {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding-top: 150px;
-}
-.uvod-text-blok {
-  max-width: 600px;
-}
-.uvod h1 {
-  margin: 0;
-  font-size: clamp(3rem, 5.8vw, 5.25rem);
-  line-height: 1.06;
-  color: var(--nebe-text);
-}
-.uvod-popis {
-  max-width: 40ch;
-  margin: 1.375rem 0 0;
-  font-size: 1.1875rem;
-  line-height: 1.55;
-  color: var(--nebe-text-2);
-}
-.uvod-akce {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.875rem 1.75rem;
-  margin-top: 1.875rem;
-}
-.odkaz-github {
-  display: inline-block;
-  padding: 13px 0;
-  font-weight: 600;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 7px;
-}
-
-/* 4. TLAČÍTKA: zaoblená, vysoká nejméně 52 px. */
+/* Tlačítko: plná oranžová, ostré rohy. Jediný tvar tlačítka na webu. */
 .tlacitko {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.6em;
   min-height: 52px;
-  padding: 0 1.75rem;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-}
-.na-nebi .tlacitko-plne {
-  background: #16222d;
-  color: #f5efe6;
-}
-.na-nebi .tlacitko-plne:hover {
-  background: #000000;
-  color: #ffffff;
-}
-.tlacitko-obrys {
-  border: 1.5px solid var(--text);
-  color: var(--text);
-}
-.tlacitko-obrys:hover {
-  background: var(--text);
-  color: var(--stranka);
-}
-
-/* 5. SEKCE A KARTY PROJEKTŮ */
-.sekce {
-  padding-top: clamp(5rem, 9vw, 8rem);
-}
-.sekce-projekty {
-  padding-top: clamp(2.5rem, 5vw, 4.5rem);
-}
-.nadpis-sekce {
-  margin: 0 0 2rem;
-  font-size: clamp(2.5rem, 4.6vw, 4rem);
-  line-height: 1.08;
-}
-
-/* Vlastní mřížka místo Bootstrap sloupců: PRD chce zlom přesně na 760 px. */
-.karty {
-  display: grid;
-  gap: 1.25rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.karty-2 {
-  max-width: 900px;
-}
-.karta {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 1.75rem;
-  border: 1px solid var(--okraj);
-  border-radius: 14px;
-  background: var(--karta);
-}
-.karta:hover {
-  border-color: var(--okraj-svetly);
-}
-.karta-stitek {
-  margin: 0 0 0.625rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--akcent);
-}
-.karta h3 {
-  margin: 0;
-  font-size: clamp(1.625rem, 2.8vw, 2.25rem);
-  line-height: 1.12;
-}
-.karta-popis {
-  margin: 0.75rem 0 0;
-  color: var(--tlumeny);
-}
-
-/* margin-top: auto odsune patičku karty dolů, karty v řadě jsou zarovnané. */
-.karta-pata {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem 1.25rem;
-  margin-top: auto;
-  padding-top: 1.25rem;
-  font-size: 1rem;
-}
-.karta-technologie {
-  color: var(--tlumeny-2);
-}
-.odkaz-akcent {
-  font-weight: 600;
-  text-decoration-color: var(--akcent);
-  text-underline-offset: 5px;
-}
-.dalsi-projekty {
-  display: flex;
-  justify-content: center;
-  margin-top: 2.25rem;
-}
-
-/* 6. O MNĚ: nadpis vlevo, text vpravo; na úzkém displeji pod sebou. */
-.o-mne {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.75rem 5rem;
-}
-.o-mne h2 {
-  flex: 1 1 280px;
-  margin: 0;
-}
-.o-mne-text {
-  flex: 2 1 520px;
-  min-width: 0;
-}
-.o-mne-hlavni {
-  max-width: 40ch;
-  margin: 0;
-  font-family: var(--nadpisy);
-  font-size: 1.5rem;
-  line-height: 1.5;
-  color: #e3e8e6;
-}
-.o-mne-dalsi {
-  margin: 1.75rem 0 0;
-  color: var(--tlumeny);
-}
-
-/* 7. KONTAKT */
-.kontakt h2 {
-  margin: 0;
-  font-size: clamp(3.5rem, 7.6vw, 6.75rem);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
-}
-.kontakt-odkazy {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 2.5rem;
-  margin-top: 1.5rem;
-  font-size: clamp(1.25rem, 2vw, 1.625rem);
-}
-.kontakt-odkazy a {
-  overflow-wrap: anywhere;
-  text-underline-offset: 8px;
-}
-.kontakt-email {
-  font-weight: 600;
-  text-decoration-color: var(--akcent);
-  text-decoration-thickness: 2px;
-}
-.kontakt-github {
+  padding: 0 24px;
+  background: var(--akcent);
+  color: var(--akcent-text);
   font-weight: 500;
-  color: var(--tlumeny);
+  text-decoration: none;
+  transition: background-color var(--t-najeti) ease, transform var(--t-stisk) var(--ease-out);
+}
+.tlacitko:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) {
+  .tlacitko:hover { background: var(--akcent-silny); color: var(--akcent-text); }
+  .tlacitko:hover .fa-arrow-right, .tlacitko:hover .fa-arrow-down { transform: translateX(3px); }
+}
+.tlacitko i { transition: transform 240ms var(--ease-out); }
+/* Menší šedé tlačítko pro vedlejší akci (More projects). */
+.tlacitko-druhe { min-height: 44px; padding: 0 18px; background: var(--plocha-2); color: var(--text); font-size: var(--vel-mala); }
+@media (hover: hover) and (pointer: fine) {
+  .tlacitko-druhe:hover { background: #3a3d42; color: var(--text); }
 }
 
-/* 8. PODSTRÁNKY: Další projekty a 404 mají místo malby jen nadpis. */
-.uvod-podstranky {
-  padding-top: clamp(2rem, 5vw, 4rem);
+/* 2. ÚVOD: kresba nahoře, jméno dole -------------------------------- */
+/* Mřížka úvodu: navigace / volné místo / řádek s větou / jméno.
+   Kresba zabírá první tři řádky, takže končí přesně nad jménem. */
+.uvod {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  min-height: 100svh;
+  background: var(--pozadi);
+  overflow: clip;
 }
-.uvod-podstranky h1 {
+.uvod > * { grid-column: 1; }
+.uvod-mala { min-height: 86svh; }
+
+/* Kresba má tři vrstvy (nebe, město, pole). Spodek pole má barvu stránky,
+   takže kresba nemá žádný okraj, jen se po krocích ztmaví do stránky. */
+.uvod-kresba { grid-row: 1 / 4; position: relative; margin: 0; background: var(--nebe); }
+.vrstva, .vrstva img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.vrstva img { object-fit: cover; object-position: 50% 100%; }
+
+.navigace {
+  grid-row: 1;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px var(--okraj) 0;
+}
+.navigace ul { display: flex; flex-wrap: wrap; gap: 4px 28px; }
+.navigace a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  min-height: 44px;
+  font-size: var(--vel-mala);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.uvod-radek {
+  grid-row: 3;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px 40px;
+  padding: 0 var(--okraj) clamp(16px, 2.4vw, 36px);
+}
+.uvod-popis { max-width: 34ch; font-size: var(--vel-text); line-height: 1.45; }
+
+/* Jméno přes celou šířku: velikost ve vw je naladěná na počet písmen. */
+.monument {
+  grid-row: 4;
+  position: relative;
+  padding: 0 var(--okraj) 26px;
+  font-size: var(--vel-monument);
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+.monument-slovo { display: inline-block; padding-bottom: 0.04em; }
+.uvod-mala .monument { --vel-monument: 16.8vw; }
+.uvod-mala .monument-dlouhy { --vel-monument: 15.6vw; }
+
+/* 3. SEKCE ---------------------------------------------------------- */
+main { position: relative; z-index: 1; background: var(--pozadi); }
+.sekce { padding-top: var(--mezera-sekce); }
+.nadpis-sekce {
+  font-size: var(--vel-nadpis);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 56px;
+}
+/* Sekce s vlastním barevným polem: změna barvy ji jasně oddělí od sousedů. */
+.sekce-pole { padding-block: var(--mezera-sekce); }
+.sekce + .sekce-pole { margin-top: var(--mezera-sekce); }
+.pole-plocha { background: var(--plocha); }
+.pole-svetle {
+  --text: var(--svetla-text);
+  --tlumeny: var(--svetla-tlumeny);
+  background: var(--svetla);
+  color: var(--text);
+}
+
+/* 3a. PROJEKTY: velká jména pod sebou, vpravo rámeček s náhledem.
+   Najetí myší nebo klávesnicí na projekt vymění obrázek v rámečku.
+   Funguje to přes :has(), bez JavaScriptu, pro nejvýš šest projektů. */
+.projekty-mrizka { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 var(--bs-gutter-x); }
+.projekty-seznam { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; }
+.projekt-obrazek { aspect-ratio: 16 / 10; overflow: hidden; margin-bottom: 18px; background: var(--plocha); }
+.projekt-obrazek img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+.projekt-hlava { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 20px; }
+.projekt-nazev {
+  font-size: var(--vel-stredni);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  padding-block: 8px 4px;
+}
+.projekt-nazev a { text-decoration: none; }
+.projekt-druh { font-size: var(--vel-mala); color: var(--tlumeny); }
+.projekt-popis { max-width: 46ch; margin-top: 8px; }
+.ramecek { display: none; }
+.projekty-sloupec .tlacitko-druhe { margin-top: 48px; }
+
+@media (min-width: 900px) and (hover: hover) and (pointer: fine) {
+  .projekty-mrizka { grid-template-columns: minmax(0, 5fr) minmax(0, 2fr); align-items: start; }
+  .projekty-seznam { gap: 32px; }
+  .projekt-obrazek { display: none; }
+  .projekt-nazev a { color: var(--tlumeny); transition: color var(--t-najeti) ease; }
+  .projekt-popis { color: var(--tlumeny); transition: color var(--t-najeti) ease; }
+  /* Rámeček drží na místě, zatímco jména jedou kolem (pinned story). */
+  .ramecek {
+    display: block;
+    position: sticky;
+    top: 15vh;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--plocha);
+  }
+  .ramecek > * {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+  .ramecek > img { object-fit: cover; object-position: 50% 0; }
+
+  /* Výchozí stav: aktivní je první projekt. */
+  .ramecek > :first-child { opacity: 1; }
+  .projekt:first-child :is(.projekt-nazev a, .projekt-popis) { color: var(--text); }
+  /* Když je pod myší nebo v focusu jiný projekt, první zhasne... */
+  .projekty-mrizka:has(.projekt:is(:hover, :focus-within)) .ramecek > :first-child { opacity: 0; }
+  .projekty-mrizka:has(.projekt:is(:hover, :focus-within)) .projekt:first-child:not(:hover, :focus-within) :is(.projekt-nazev a, .projekt-popis) {
+    color: var(--tlumeny);
+  }
+  /* ...a rozsvítí se ten, na kterém uživatel je. */
+  .projekt:is(:hover, :focus-within) :is(.projekt-nazev a, .projekt-popis) { color: var(--text); }
+  .projekty-mrizka:has(.projekt:nth-child(1):is(:hover, :focus-within)) .ramecek > :nth-child(1),
+  .projekty-mrizka:has(.projekt:nth-child(2):is(:hover, :focus-within)) .ramecek > :nth-child(2),
+  .projekty-mrizka:has(.projekt:nth-child(3):is(:hover, :focus-within)) .ramecek > :nth-child(3),
+  .projekty-mrizka:has(.projekt:nth-child(4):is(:hover, :focus-within)) .ramecek > :nth-child(4),
+  .projekty-mrizka:has(.projekt:nth-child(5):is(:hover, :focus-within)) .ramecek > :nth-child(5),
+  .projekty-mrizka:has(.projekt:nth-child(6):is(:hover, :focus-within)) .ramecek > :nth-child(6) { opacity: 1; }
+}
+
+/* Widget Bakaláři: výřez skutečného rozhraní widgetu (tmavý režim iOS). */
+.widget {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 24px;
+  background: var(--plocha);
+  font-family: var(--pismo);
+  letter-spacing: 0;
+}
+.widget-karta {
+  width: min(100%, 360px);
+  padding: 12px 14px 14px;
+  border-radius: 22px;
+  background: #1c1c1e;
+  color: #f2f2f7;
+  font-size: 11px;
+  line-height: 1.25;
+}
+.widget-hlava { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; white-space: nowrap; }
+.widget-hlava b { font-size: 13px; font-weight: 600; }
+.widget-hlava span { color: #98989f; overflow: hidden; text-overflow: ellipsis; }
+.widget-tecky { display: flex; gap: 4px; margin-left: auto; }
+.widget-tecky i { width: 6px; height: 6px; border-radius: 50%; background: #48484a; }
+.widget-tecky i:first-child { background: #f2f2f7; }
+.widget-sloupce { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.widget-sloupec { display: grid; gap: 3px; }
+.hodina { padding: 2px 6px; border-radius: 8px; }
+.hodina-ted { background: rgba(255, 255, 255, 0.08); }
+.hodina-cas {
+  display: block;
+  font-size: 10px;
+  color: #98989f;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.hodina-cas em { font-style: normal; font-weight: 600; color: #64b5ff; }
+.hodina-cas .supl { color: #ffb340; }
+.hodina-radek { display: flex; align-items: center; justify-content: space-between; }
+.hodina-radek b { font-size: 15px; font-weight: 700; }
+.hodina-radek .zmena { color: #ffb340; }
+.ucebna { padding: 1px 6px; border-radius: 5px; font-size: 13px; font-weight: 700; }
+.ucebna-1 { color: #64b5ff; background: rgba(100, 181, 255, 0.18); }
+.ucebna-2 { color: #5bd68a; background: rgba(91, 214, 138, 0.18); }
+.ucebna-3 { color: #c792ff; background: rgba(199, 146, 255, 0.18); }
+
+/* Python: skutečný kód z repozitáře Small-Python-Projects. */
+.kod {
+  height: 100%;
   margin: 0;
-  font-size: clamp(3rem, 6vw, 5.25rem);
-  line-height: 1.06;
+  padding: 28px 26px;
+  overflow: hidden;
+  background: var(--plocha);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.6;
 }
-.uvod-podstranky-popis {
-  max-width: 44ch;
-  margin: 1.25rem 0 0;
-  font-size: 1.1875rem;
-  color: var(--tlumeny);
+.kod code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; color: inherit; }
+.kod-slovo { color: var(--akcent); }
+.kod-text { color: #c9cbce; }
+.kod-pozn { color: var(--tlumeny); }
+
+/* Bližší pohled na podstránce: jeden velký screenshot a dva menší. */
+.detail-mrizka { display: grid; grid-template-columns: 2fr 1fr 1fr; align-items: end; gap: var(--bs-gutter-x); }
+.detail img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0; background: var(--plocha); }
+.detail figcaption { margin-top: 12px; font-size: var(--vel-mala); color: var(--tlumeny); }
+@media (max-width: 899px) {
+  .detail-mrizka { grid-template-columns: 1fr 1fr; }
+  .detail-velky { grid-column: 1 / -1; }
 }
-.zpet {
+
+/* 3b. O MNĚ: fakta vlevo, široký odstavec od třetiny šířky ------------ */
+.o-mne-radek + .o-mne-radek { margin-top: 96px; }
+#o-mne .nadpis-sekce { margin-bottom: 32px; }
+.fakta { display: grid; gap: 20px; font-size: var(--vel-mala); }
+.fakta dt { font-weight: 400; color: var(--tlumeny); }
+.odstavec-velky { max-width: 34em; font-size: var(--vel-uvod); line-height: 1.35; letter-spacing: -0.01em; }
+.o-mne-slovo { font-size: var(--vel-text); font-weight: 500; margin-bottom: 20px; }
+.zaznam { display: grid; gap: 10px; font-size: var(--vel-text); margin-bottom: 10px; }
+.zaznam li { display: flex; justify-content: space-between; gap: 16px; }
+.zaznam span { color: var(--tlumeny); text-align: right; font-variant-numeric: tabular-nums; }
+
+/* 3c. NÁSTROJE: mřížka 3 × 2, u každého nástroje projekty, kde je vidět. */
+.nastroje-hlava .nadpis-sekce { margin-bottom: 24px; }
+.nastroje {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 64px var(--bs-gutter-x);
+  margin-top: 72px;
+}
+.nastroj-nazev {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.875rem 1.75rem;
-  margin-top: 2.25rem;
+  align-items: baseline;
+  gap: 0 12px;
+  margin-bottom: 12px;
+  font-size: var(--vel-uvod);
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
+.nastroj-nazev span { font-size: var(--vel-mala); font-weight: 400; letter-spacing: 0; color: var(--tlumeny); }
+.nastroj p { max-width: 36ch; }
+.nastroj a { text-decoration-color: var(--tlumeny); }
 
-/* 9. PATIČKA: autor a AI vlevo, validační tlačítka vpravo. */
-.paticka {
-  margin-top: 5.5rem;
-  padding-bottom: clamp(3rem, 5vw, 4.5rem);
+/* 3d. KONTAKT: řádky přes celou šířku, střídají dva tóny ------------- */
+.kontakt { margin-top: var(--mezera-sekce); }
+.sekce-pole + .kontakt { margin-top: 0; }
+.kontakt-radek {
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(76px, 7.4vw, 112px);
+  padding: 20px var(--okraj) clamp(14px, 1.4vw, 22px);
+  font-size: var(--vel-stredni);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
-.paticka-obsah {
+.kontakt li:nth-child(odd) { background: var(--plocha); }
+.kontakt-radek a { text-decoration-thickness: 0.04em; }
+.kontakt-pozdrav { gap: 0.3em; margin: 0; min-height: clamp(120px, 11vw, 168px); font-size: var(--vel-nadpis); font-weight: 500; }
+/* Čtvercové tlačítko se šipkou: otevře e-mail s předvyplněným předmětem. */
+.kontakt-sipka {
+  display: inline-grid;
+  place-items: center;
+  width: 0.9em;
+  height: 0.9em;
+  margin-bottom: 0.02em;
+  background: var(--akcent);
+  color: var(--akcent-text);
+  font-size: 1em;
+  text-decoration: none;
+  transition: background-color var(--t-najeti) ease, transform var(--t-stisk) var(--ease-out);
+}
+.kontakt-sipka i { font-size: 0.42em; transition: transform 240ms var(--ease-out); }
+.kontakt-sipka:active { transform: scale(0.96); }
+@media (hover: hover) and (pointer: fine) {
+  .kontakt-sipka:hover { background: var(--akcent-silny); color: var(--akcent-text); }
+  .kontakt-sipka:hover i { transform: translateX(0.12em); }
+}
+.kontakt-sipka:focus-visible { outline: 3px solid var(--text); outline-offset: 4px; }
+
+/* 4. PATIČKA: obrácené barvy, jméno přes celou šířku ------------------ */
+.paticka {
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  min-height: 78svh;
+  padding-top: 40px;
+  background: var(--svetla);
+  color: var(--svetla-text);
+}
+.paticka-sloupce { row-gap: 32px; font-size: var(--vel-mala); }
+.paticka-nadpis { font-size: var(--vel-mala); font-weight: 500; line-height: 1.5; margin-bottom: 6px; }
+.paticka-sloupce li { color: var(--svetla-tlumeny); }
+.paticka-sloupce a { display: inline-flex; align-items: center; min-height: 32px; color: var(--svetla-tlumeny); }
+@media (hover: hover) and (pointer: fine) {
+  .paticka-sloupce a:hover { color: var(--svetla-text); }
+}
+.paticka a:focus-visible { outline-color: var(--svetla-text); }
+.paticka-znacka {
+  grid-row: 3;
+  padding-inline: var(--okraj);
+  font-size: var(--vel-monument);
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+.paticka-pravni {
+  grid-row: 4;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  gap: 1rem 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--okraj);
-  font-size: 0.9375rem;
-  color: var(--tlumeny-2);
+  gap: 4px 24px;
+  padding: 20px var(--okraj) 24px;
+  font-size: var(--vel-mala);
+  color: var(--svetla-tlumeny);
 }
-.paticka p {
-  margin: 0;
+.paticka-pravni a { color: var(--svetla-text); }
+
+/* 5. TELEFON A TABLET ---------------------------------------------- */
+@media (max-width: 899px) {
+  /* Na úzké obrazovce jde jméno hned pod kresbu a věta s tlačítkem pod něj. */
+  .uvod-kresba { grid-row: 1 / 4; }
+  .monument { grid-row: 3; padding-block: 24px 20px; }
+  .uvod-radek { grid-row: 4; flex-direction: column; align-items: flex-start; padding-bottom: 28px; }
+  .o-mne-radek + .o-mne-radek { margin-top: 72px; }
+  .fakta { margin-bottom: 40px; }
+  .nastroje { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px var(--bs-gutter-x); margin-top: 40px; }
 }
-.paticka-autor {
-  font-weight: 600;
-  color: var(--text);
-}
-.paticka-oddelovac {
-  margin: 0 0.625rem;
-}
-.paticka-ai {
-  color: var(--akcent);
-  text-underline-offset: 4px;
-}
-.validace {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.625rem;
-}
-.validace a {
-  padding: 0 1rem;
-  border: 1px solid var(--okraj-svetly);
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-}
-.validace a:hover {
-  border-color: var(--text);
+@media (max-width: 599px) {
+  :root { --mezera-sekce: 96px; }
+  .nastroje { grid-template-columns: minmax(0, 1fr); }
+  .navigace { padding-top: 12px; }
+  .navigace ul { gap: 0 18px; }
+  .vrstva img { object-position: 63% 100%; }
+  .monument { --vel-monument: 23vw; white-space: normal; line-height: 0.86; }
+  .monument-slovo { display: block; }
+  .uvod-mala .monument { --vel-monument: 19vw; }
+  .paticka-znacka { font-size: 23vw; white-space: normal; }
+  .paticka-znacka span { display: block; }
+  .kontakt-radek { min-height: 72px; letter-spacing: -0.03em; }
+  .kontakt-pozdrav { min-height: 104px; }
 }
 
-/* Přechody barev jen bez omezeného pohybu. */
+/* 6. POHYB ----------------------------------------------------------
+   Všechno je v HTML vidět hned. Animace jen přidávají příchod a
+   uživatelé s omezeným pohybem dostanou rovnou hotový stav. */
 @media (prefers-reduced-motion: no-preference) {
-  .tlacitko, .karta, .validace a {
-    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-  }
+  /* Příchod úvodu: nebe se rozsvítí, město a pole vyjedou, jméno vystoupá. */
+  .vrstva-obloha img { animation: rozsvit 1000ms ease both; }
+  /* Soumrak: celé nebe za půl minuty pomalu klesne o kousek níž. */
+  .vrstva-obloha { animation: soumrak 30s cubic-bezier(0.33, 1, 0.68, 1) both; }
+  .vrstva-mesto img { animation: vyjed 1400ms var(--ease-expo) 120ms both; }
+  .vrstva-pole img { animation: vyjed-malo 1400ms var(--ease-expo) 60ms both; }
+  .monument { overflow: clip; overflow-clip-margin: 0.1em; }
+  .monument-slovo { animation: radek 800ms var(--ease-expo) both; animation-delay: 150ms; }
+  .monument-slovo + .monument-slovo { animation-delay: 230ms; }
+  .uvod-popis { animation: vystup 500ms var(--ease-out) 420ms both; }
+  .uvod-radek .tlacitko { animation: vystup 500ms var(--ease-out) 480ms both; }
 }
-
-/* 10. ŠÍŘE NEŽ 760 PX: tři karty vedle sebe. */
-@media (min-width: 761px) {
-  .karty {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .karty-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* 11. MOBIL DO 760 PX: malba se přesune pod text a ořízne se na střed. */
-@media (max-width: 760px) {
-  .uvod {
-    min-height: 0;
-  }
-  .uvod-malba {
-    grid-area: 2 / 1;
-    height: 520px;
-  }
-  .container {
-    --bs-gutter-x: 2.5rem;
-  }
-  .uvod-text {
-    padding-top: 140px;
-    padding-bottom: 1.5rem;
-  }
-}
+@keyframes rozsvit { from { opacity: 0; } }
+@keyframes soumrak { from { transform: translateY(-2.5%); } }
+@keyframes vyjed { from { opacity: 0; transform: translateY(5%); } }
+@keyframes vyjed-malo { from { transform: translateY(2%); } }
+@keyframes radek { from { transform: translateY(105%); } }
+@keyframes vystup { from { opacity: 0; transform: translateY(14px); } }
