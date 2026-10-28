@@ -38,9 +38,9 @@ Widget Bakaláři a ukázka kódu v Pythonu nejsou obrázky, ale HTML přímo v 
 - Screenshot: otevři web v okně 1000 × 1250 px, vyfoť ho a ulož jako WebP 1200 × 1500 px pod stejným názvem.
 - Náhled pro sdílení: otevři `index.html` v okně 1200 × 630 px, skryj navigaci a tlačítko a ulož snímek jako JPG v kvalitě 84.
 
-## Malba z předchozího návrhu
+## Odstraněné obrázky
 
-Soubory `images/hero-jezero-*.webp` a `src/hero-jezero.svg` patří k předchozímu návrhu B2 Horské jezero. Nový web je nepoužívá; smažou se až po schválení. Starší obrázky jsou v historii Gitu ve větvi `main`.
+Malba předchozího návrhu B2 Horské jezero (`images/hero-jezero-*.webp` a zdroj `src/hero-jezero.svg`) byla 28. 10. 2026 odstraněna. Spolu se staršími pixelovými obrázky je v historii Gitu ve větvi `main`.
 
 ---
 
@@ -82,6 +82,6 @@ The Bakaláři widget and the Python code sample aren't images but HTML right in
 - Screenshot: open the website in a 1000 × 1250 px window, capture it and save it as a 1200 × 1500 px WebP under the same name.
 - Share preview: open `index.html` in a 1200 × 630 px window, hide the navigation and the button and save the capture as a JPG at quality 84.
 
-## Painting from the previous design
+## Removed images
 
-The files `images/hero-jezero-*.webp` and `src/hero-jezero.svg` belong to the previous design, B2 Mountain Lake. The new website doesn't use them; they'll be deleted only after approval. Older images are in the Git history on the `main` branch.
+The painting from the previous design, B2 Mountain Lake (`images/hero-jezero-*.webp` and its source `src/hero-jezero.svg`), was removed on 28 Oct 2026. Along with the older pixel images, it is still in the Git history on the `main` branch.
