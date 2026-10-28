@@ -4,61 +4,43 @@
 
 <a id="cesky"></a>
 
-Všechny obrázky webu jsou ve složce `assets`. Vznikly v říjnu 2026 pro redesign portfolia podle návrhu B2 Horské jezero (zadání je v `PRD.md`).
+Všechny obrázky webu jsou ve složce `assets`. Vznikly 28. 10. 2026 pro nový design „Opava za soumraku“.
 
 ## Soubory
 
 | Soubor | Rozměr | Velikost | K čemu |
 | --- | --- | --- | --- |
-| `images/hero-jezero-2880.webp` | 2880 × 1920 px | 66 kB | úvodní malba pro velké a retina displeje |
-| `images/hero-jezero-1440.webp` | 1440 × 960 px | 35 kB | úvodní malba pro běžný desktop |
-| `images/hero-jezero-960.webp` | 960 × 640 px | 24 kB | úvodní malba pro menší okna |
-| `images/hero-jezero-mobil-1080.webp` | 1080 × 1440 px | 25 kB | výřez na výšku pro mobily s vysokým rozlišením |
-| `images/hero-jezero-mobil-720.webp` | 720 × 960 px | 18 kB | výřez na výšku pro mobily |
-| `images/og-image.jpg` | 1200 × 630 px | 67 kB | náhled při sdílení odkazu (Open Graph) |
-| `src/hero-jezero.svg` | viewBox 1440 × 960 | 33 kB | zdroj malby, vyrábějí se z něj všechny obrázky výše |
-| `favicon.svg` | 64 × 64 | 8 kB | ikona v záložce prohlížeče |
+| `kresba/opava-obloha.svg` | viewBox 2400 × 950 | 3 kB | vrstva 1: nebe po pruzích, slunce, hvězdy a ptáci |
+| `kresba/opava-mesto.svg` | viewBox 2400 × 950 | 40 kB | vrstva 2: kopce Nízkého Jeseníku a Opava s okny, která se rozsvěcují |
+| `kresba/opava-pole.svg` | viewBox 2400 × 950 | 10 kB | vrstva 3: pole s brázdami, spodek má barvu stránky (#18191b) |
+| `images/projekty/spatnikluci.webp` | 1200 × 1500 px | 78 kB | náhled webu spatnikluci.cz |
+| `images/projekty/jazyky.webp` | 1200 × 1500 px | 58 kB | náhled webu Programming Languages |
+| `images/projekty/jazyky-obory.webp` | 1200 × 1500 px | 54 kB | Programming Languages, seznam oborů (podstránka) |
+| `images/projekty/giggle.webp` | 1200 × 1500 px | 22 kB | náhled Giggle |
+| `images/projekty/giggle-hledani.webp` | 1200 × 1500 px | 28 kB | Giggle, pokročilé hledání (podstránka) |
+| `images/projekty/giggle-formular.webp` | 1200 × 1500 px | 47 kB | Giggle, stránka s formuláři (podstránka) |
+| `images/og-image.jpg` | 1200 × 630 px | 56 kB | náhled při sdílení odkazu (Open Graph) |
+| `favicon.svg` | viewBox 64 × 64 | 1 kB | ikona v záložce: Hláska před sluncem |
+
+Widget Bakaláři a ukázka kódu v Pythonu nejsou obrázky, ale HTML přímo v `index.html` (widget podle vzhledu z `BakalariRozvrh.js`, kód je `countdown.py` z repozitáře Small-Python-Projects).
 
 ## Původ
 
-Malbu i ikonu vytvořil Claude (AI od Anthropic) jako SVG podle zadání Víta Charváta. Nejde o fotku ani o obrázek z fotobanky. Všechny soubory obsahují metadata Content Credentials (C2PA), která uvádějí, že vznikly s pomocí AI; u každého obrázku tvoří asi 6 kB, u ikony většinu její velikosti.
+**Kresbu Opavy** nakreslil Claude (AI od Anthropic) přímo v kódu SVG podle zadání Víta Charváta. Jde o volnou kresbu, ne o překreslenou fotku. Jako vodítko pro tvar věží a pohled od jihu posloužily fotky z Wikimedia Commons: [Opava-panorama-from-south](https://commons.wikimedia.org/wiki/File:Opava-panorama-from-south.jpg) (Multimotyl) a [Hláska, radnice Opava](https://commons.wikimedia.org/wiki/File:Hl%C3%A1ska,_radnice_Opava_-_panoramio.jpg) (Vladimír Jadrný). Kresba je ve třech vrstvách, aby se při načtení stránky dala každá rozpohybovat zvlášť. Animace oken, majáku na komíně, ptáků a slunce jsou přímo v SVG (`<style>` na začátku souboru) a vypnou se, když má uživatel omezený pohyb.
 
-Scéna: ranní horské jezero, vrcholky v růžové záři a jejich odraz ve vodě, borovice vpravo a v popředí dřevěný stůl s notebookem (na obrazovce kód), hrnkem a skicákem s kresbou hor. Malířský vzhled dělají filtry SVG (šum, posun okrajů, rozostření a prolínání barev). Deska stolu má stejnou barvu jako stránka (#26323A), takže malba plynule přechází do webu.
+**Screenshoty** jsou Vítovy vlastní weby, vyfocené 28. 10. 2026 v prohlížeči Chrome bez okna (okno 1000 × 1250 px, zvětšení 1,2) a uložené jako WebP v kvalitě 82.
 
-Ikona `favicon.svg` je zjednodušená hora ve stejných barvách.
+**Náhled pro sdílení** je výřez úvodu hlavní stránky v šířce 1200 px, bez navigace a tlačítka.
 
-## Jak obrázky vyrobit znovu
+## Jak obrázky upravit
 
-Při úpravě malby se mění jen `src/hero-jezero.svg`. Ostatní soubory se z něj vyrobí takhle:
+- Kresba: SVG soubory jdou upravit v textovém editoru, každý tvar je na vlastním řádku. Barvy odpovídají proměnným ze `style.css`. Všechny tři vrstvy musí mít stejný `viewBox`, jinak na sebe nesednou.
+- Screenshot: otevři web v okně 1000 × 1250 px, vyfoť ho a ulož jako WebP 1200 × 1500 px pod stejným názvem.
+- Náhled pro sdílení: otevři `index.html` v okně 1200 × 630 px, skryj navigaci a tlačítko a ulož snímek jako JPG v kvalitě 84.
 
-1. Otevři SVG v prohlížeči ve velikosti 1440 × 960 px a vyfoť ho s dvojnásobným rozlišením (2880 × 1920 px PNG).
-2. Desktop: zmenši na šířku 2880, 1440 a 960 px a ulož jako WebP v kvalitě 72–78.
-3. Mobil: vyřízni prostředek obrázku (vodorovně od 720 do 2160 px, celá výška), zmenši na 1080 × 1440 a 720 × 960 px a ulož jako WebP.
-4. Náhled pro sdílení: vyřízni pás od 408 px shora do spodního okraje, zmenši na 1200 × 630 px a ulož jako JPG v kvalitě 84.
+## Malba z předchozího návrhu
 
-## Použití na webu
-
-Úvodní malba se vkládá přes `<picture>`, aby si prohlížeč sám vybral výřez a velikost:
-
-```html
-<picture>
-  <source media="(max-width: 760px)"
-          srcset="assets/images/hero-jezero-mobil-720.webp 720w,
-                  assets/images/hero-jezero-mobil-1080.webp 1080w"
-          sizes="100vw">
-  <img src="assets/images/hero-jezero-1440.webp"
-       srcset="assets/images/hero-jezero-960.webp 960w,
-               assets/images/hero-jezero-1440.webp 1440w,
-               assets/images/hero-jezero-2880.webp 2880w"
-       sizes="100vw" width="1440" height="960"
-       alt="Painting: a morning view from a desk with a laptop out to a mountain lake reflecting the peaks."
-       fetchpriority="high">
-</picture>
-```
-
-## Odstraněné obrázky
-
-Pixelové ilustrace starého webu (`pixel-computer.png`, `pixel-landscape.png`, `pixel-workspace.png`), náhledy starého webu, původní návrh a stará ikona terminálu byly 27. 10. 2026 odstraněny. Pořád jsou v historii Gitu ve větvi `main`.
+Soubory `images/hero-jezero-*.webp` a `src/hero-jezero.svg` patří k předchozímu návrhu B2 Horské jezero. Nový web je nepoužívá; smažou se až po schválení. Starší obrázky jsou v historii Gitu ve větvi `main`.
 
 ---
 
@@ -66,58 +48,40 @@ Pixelové ilustrace starého webu (`pixel-computer.png`, `pixel-landscape.png`, 
 
 # Images
 
-All website images are in the `assets` folder. They were made in October 2026 for the portfolio redesign based on design B2 Mountain Lake (the brief is in `PRD.md`).
+All website images are in the `assets` folder. They were made on 28 Oct 2026 for the new "Opava at dusk" design.
 
 ## Files
 
 | File | Dimensions | Size | Purpose |
 | --- | --- | --- | --- |
-| `images/hero-jezero-2880.webp` | 2880 × 1920 px | 66 kB | intro painting for large and retina displays |
-| `images/hero-jezero-1440.webp` | 1440 × 960 px | 35 kB | intro painting for a regular desktop |
-| `images/hero-jezero-960.webp` | 960 × 640 px | 24 kB | intro painting for smaller windows |
-| `images/hero-jezero-mobil-1080.webp` | 1080 × 1440 px | 25 kB | portrait crop for high-resolution phones |
-| `images/hero-jezero-mobil-720.webp` | 720 × 960 px | 18 kB | portrait crop for phones |
-| `images/og-image.jpg` | 1200 × 630 px | 67 kB | link share preview (Open Graph) |
-| `src/hero-jezero.svg` | viewBox 1440 × 960 | 33 kB | source of the painting, all images above are made from it |
-| `favicon.svg` | 64 × 64 | 8 kB | browser tab icon |
+| `kresba/opava-obloha.svg` | viewBox 2400 × 950 | 3 kB | layer 1: banded sky, the sun, stars and birds |
+| `kresba/opava-mesto.svg` | viewBox 2400 × 950 | 40 kB | layer 2: the Nízký Jeseník hills and Opava with windows that light up |
+| `kresba/opava-pole.svg` | viewBox 2400 × 950 | 10 kB | layer 3: fields with furrows, the bottom is the page colour (#18191b) |
+| `images/projekty/spatnikluci.webp` | 1200 × 1500 px | 78 kB | preview of spatnikluci.cz |
+| `images/projekty/jazyky.webp` | 1200 × 1500 px | 58 kB | preview of the Programming Languages website |
+| `images/projekty/jazyky-obory.webp` | 1200 × 1500 px | 54 kB | Programming Languages, the list of fields (subpage) |
+| `images/projekty/giggle.webp` | 1200 × 1500 px | 22 kB | preview of Giggle |
+| `images/projekty/giggle-hledani.webp` | 1200 × 1500 px | 28 kB | Giggle, advanced search (subpage) |
+| `images/projekty/giggle-formular.webp` | 1200 × 1500 px | 47 kB | Giggle, the forms page (subpage) |
+| `images/og-image.jpg` | 1200 × 630 px | 56 kB | link share preview (Open Graph) |
+| `favicon.svg` | viewBox 64 × 64 | 1 kB | browser tab icon: Hláska in front of the sun |
+
+The Bakaláři widget and the Python code sample aren't images but HTML right in `index.html` (the widget follows the look of `BakalariRozvrh.js`, the code is `countdown.py` from the Small-Python-Projects repository).
 
 ## Origin
 
-The painting and the icon were made by Claude (an AI by Anthropic) as SVG, following Vít Charvát's brief. They are not photos or stock images. All files contain Content Credentials (C2PA) metadata stating they were made with AI; it takes about 6 kB in each image and most of the icon's size.
+**The drawing of Opava** was made by Claude (an AI by Anthropic) directly in SVG code, following Vít Charvát's brief. It's a free drawing, not a traced photo. Photos from Wikimedia Commons served as a guide for the shape of the towers and the view from the south: [Opava-panorama-from-south](https://commons.wikimedia.org/wiki/File:Opava-panorama-from-south.jpg) (Multimotyl) and [Hláska, radnice Opava](https://commons.wikimedia.org/wiki/File:Hl%C3%A1ska,_radnice_Opava_-_panoramio.jpg) (Vladimír Jadrný). The drawing has three layers so each one can move on its own when the page loads. The animations of the windows, the chimney's warning light, the birds and the sun live inside the SVG (`<style>` at the top of the file) and switch off when the visitor has reduced motion turned on.
 
-The scene: a mountain lake in the morning, peaks in a pink glow reflected in the water, a pine tree on the right, and in the foreground a wooden desk with a laptop (code on the screen), a mug and a sketchbook with a drawing of mountains. The painted look comes from SVG filters (noise, edge displacement, blur and color blending). The desktop is the same color as the page (#26323A), so the painting blends smoothly into the website.
+**The screenshots** are Vít's own websites, captured on 28 Oct 2026 in headless Chrome (a 1000 × 1250 px window at 1.2 zoom) and saved as WebP at quality 82.
 
-The `favicon.svg` icon is a simplified mountain in the same colors.
+**The share preview** is a crop of the home page intro at 1200 px wide, without the navigation and the button.
 
-## How to rebuild the images
+## How to change the images
 
-When changing the painting, only `src/hero-jezero.svg` is edited. The other files are made from it like this:
+- Drawing: the SVG files can be edited in a text editor, every shape is on its own line. The colours match the variables in `style.css`. All three layers must keep the same `viewBox`, otherwise they won't line up.
+- Screenshot: open the website in a 1000 × 1250 px window, capture it and save it as a 1200 × 1500 px WebP under the same name.
+- Share preview: open `index.html` in a 1200 × 630 px window, hide the navigation and the button and save the capture as a JPG at quality 84.
 
-1. Open the SVG in a browser at 1440 × 960 px and capture it at double resolution (2880 × 1920 px PNG).
-2. Desktop: scale to widths of 2880, 1440 and 960 px and save as WebP at quality 72–78.
-3. Mobile: crop the middle of the image (horizontally from 720 to 2160 px, full height), scale to 1080 × 1440 and 720 × 960 px and save as WebP.
-4. Share preview: crop a strip from 408 px from the top to the bottom edge, scale to 1200 × 630 px and save as JPG at quality 84.
+## Painting from the previous design
 
-## Use on the website
-
-The intro painting is inserted with `<picture>`, so the browser picks the crop and size by itself:
-
-```html
-<picture>
-  <source media="(max-width: 760px)"
-          srcset="assets/images/hero-jezero-mobil-720.webp 720w,
-                  assets/images/hero-jezero-mobil-1080.webp 1080w"
-          sizes="100vw">
-  <img src="assets/images/hero-jezero-1440.webp"
-       srcset="assets/images/hero-jezero-960.webp 960w,
-               assets/images/hero-jezero-1440.webp 1440w,
-               assets/images/hero-jezero-2880.webp 2880w"
-       sizes="100vw" width="1440" height="960"
-       alt="Painting: a morning view from a desk with a laptop out to a mountain lake reflecting the peaks."
-       fetchpriority="high">
-</picture>
-```
-
-## Removed images
-
-The old website's pixel illustrations (`pixel-computer.png`, `pixel-landscape.png`, `pixel-workspace.png`), old website screenshots, the original design and the old terminal icon were removed on 27 Oct 2026. They are still in the Git history on the `main` branch.
+The files `images/hero-jezero-*.webp` and `src/hero-jezero.svg` belong to the previous design, B2 Mountain Lake. The new website doesn't use them; they'll be deleted only after approval. Older images are in the Git history on the `main` branch.

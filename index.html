@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vít Charvát | I build websites and small apps</title>
-    <meta name="description" content="Portfolio of Vít Charvát. Websites in HTML and CSS, small Python programs and the Špatní Kluci company website.">
-    <meta name="theme-color" content="#26323A">
+    <meta name="description" content="Portfolio of Vít Charvát, an IT student in Opava. Websites in HTML and CSS, an iPhone widget for Bakaláři and small Python programs.">
+    <meta name="theme-color" content="#18191b">
     <link rel="canonical" href="https://vitekcharvat.github.io/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
@@ -14,140 +14,282 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Vít Charvát">
     <meta property="og:title" content="Vít Charvát | I build websites and small apps">
-    <meta property="og:description" content="Websites in HTML and CSS, small Python programs and the Špatní Kluci company website.">
+    <meta property="og:description" content="Websites in HTML and CSS, an iPhone widget for Bakaláři and small Python programs.">
     <meta property="og:url" content="https://vitekcharvat.github.io/">
     <meta property="og:image" content="https://vitekcharvat.github.io/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Painting: a desk with a laptop in front of a mountain lake reflecting the peaks.">
+    <meta property="og:image:alt" content="Drawing of Opava at dusk with the name Vít Charvát underneath.">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Bootstrap jen jako CSS: kontejner, rozestupy a pomocné třídy. -->
+    <!-- Bootstrap jen jako CSS: mřížka (row, col-*) a třída visually-hidden. -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- Vlastní styl je poslední, takže přepíše výchozí vzhled Bootstrapu. -->
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <a class="skip-link" href="#projekty">Skip to projects</a>
+    <a class="skip-link" href="#obsah">Skip to content</a>
 
-    <header class="hlavicka hlavicka-pres-malbu na-nebi">
-      <div class="container hlavicka-obsah">
-        <a class="znacka" href="#nahoru">Vít Charvát</a>
-        <!-- Menu se na mobilu jen zalomí, nepotřebuje hamburger ani JavaScript. -->
-        <nav aria-label="Main navigation">
-          <ul class="navigace">
-            <li><a href="#projekty">Projects</a></li>
-            <li><a href="#o-mne">About</a></li>
-            <li><a href="#kontakt">Contact</a></li>
-          </ul>
-        </nav>
+    <!-- Úvod: kresba Opavy ve třech vrstvách, pod ní jméno přes celou šířku. -->
+    <header id="nahoru" class="uvod">
+      <div class="uvod-kresba" role="img" aria-label="Drawing of Opava at dusk, seen from the fields to the south: the Hláska tower, church towers, panel blocks with lit windows and the striped heating plant chimney.">
+        <div class="vrstva vrstva-obloha"><img src="assets/kresba/opava-obloha.svg" alt="" width="2400" height="950" fetchpriority="high"></div>
+        <div class="vrstva vrstva-mesto"><img src="assets/kresba/opava-mesto.svg" alt="" width="2400" height="950" fetchpriority="high"></div>
+        <div class="vrstva vrstva-pole"><img src="assets/kresba/opava-pole.svg" alt="" width="2400" height="950"></div>
+      </div>
+
+      <nav class="navigace" aria-label="Main navigation">
+        <ul>
+          <li><a href="#projekty">Projects</a></li>
+          <li><a href="#o-mne">About</a></li>
+          <li><a href="#kontakt">Contact</a></li>
+          <li><a href="https://github.com/VitekCharvat"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a></li>
+        </ul>
+      </nav>
+
+      <h1 class="monument"><span class="monument-slovo">Vít</span> <span class="monument-slovo">Charvát</span></h1>
+      <div class="uvod-radek">
+        <p class="uvod-popis">I'm an IT student in Opava. I build websites and small apps in HTML, CSS and Python.</p>
+        <a class="tlacitko" href="#projekty">See projects<i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
       </div>
     </header>
 
-    <main>
-      <!-- Úvod: malba a text leží ve stejné buňce mřížky, text je přes nebe. -->
-      <section id="nahoru" class="uvod na-nebi" aria-labelledby="uvod-nadpis">
-        <div class="uvod-malba">
-          <!-- Prohlížeč si sám vybere výřez (mobil / desktop) a velikost. -->
-          <picture>
-            <source media="(max-width: 760px)" srcset="assets/images/hero-jezero-mobil-720.webp 720w, assets/images/hero-jezero-mobil-1080.webp 1080w" sizes="100vw" width="720" height="960">
-            <img src="assets/images/hero-jezero-1440.webp" srcset="assets/images/hero-jezero-960.webp 960w, assets/images/hero-jezero-1440.webp 1440w, assets/images/hero-jezero-2880.webp 2880w" sizes="100vw" width="1440" height="960" alt="Painting: a morning view from a desk with a laptop out to a mountain lake reflecting the peaks." fetchpriority="high">
-          </picture>
+    <main id="obsah">
+      <!-- Projekty: jména jako rejstřík. Na počítači ukazuje rámeček vpravo
+           náhled projektu, na kterém je myš nebo focus. Na mobilu má každý
+           projekt svůj obrázek nad jménem. -->
+      <section id="projekty" class="sekce obal" aria-labelledby="projekty-nadpis">
+        <h2 id="projekty-nadpis" class="nadpis-sekce">Projects</h2>
+        <div class="projekty-mrizka">
+          <ul class="projekty-seznam">
+            <li class="projekt">
+              <figure class="projekt-obrazek"><img src="assets/images/projekty/spatnikluci.webp" alt="Home page of spatnikluci.cz: dark green design with the Špatní Kluci logo." width="1200" height="1500" loading="lazy"></figure>
+              <div class="projekt-hlava">
+                <h3 class="projekt-nazev"><a href="https://spatnikluci.cz/">Špatní Kluci</a></h3>
+                <p class="projekt-druh">Company website, live · Summer 2026</p>
+              </div>
+              <p class="projekt-popis">A paid job for an Ostrava company that supplies communication technology to professionals. I did the design, the code and the deployment on my own.</p>
+            </li>
+            <li class="projekt">
+              <figure class="projekt-obrazek">
+                <div class="widget" data-ui role="img" aria-label="The Bakaláři timetable widget: Monday's lessons with the current one highlighted and a countdown.">
+                  <div class="widget-karta" aria-hidden="true">
+                    <div class="widget-hlava"><b>Dnes · pondělí 2. 11.</b><span>ještě 8 hodin · do 16:45</span><span class="widget-tecky"><i></i><i></i></span></div>
+                    <div class="widget-sloupce">
+                      <div class="widget-sloupec">
+                        <div class="hodina hodina-ted"><span class="hodina-cas">8:00 – 8:45 <em>· zbývá 12:03</em></span><span class="hodina-radek"><b>EKO</b><span class="ucebna ucebna-1">234</span></span></div>
+                        <div class="hodina"><span class="hodina-cas">8:55 – 9:40</span><span class="hodina-radek"><b>MAT</b><span class="ucebna ucebna-1">234</span></span></div>
+                        <div class="hodina"><span class="hodina-cas">9:50 – 10:35</span><span class="hodina-radek"><b>CJL</b><span class="ucebna ucebna-1">234</span></span></div>
+                      </div>
+                      <div class="widget-sloupec">
+                        <div class="hodina"><span class="hodina-cas">11:45 – 12:30 <em class="supl">· supl.</em></span><span class="hodina-radek"><b class="zmena">ANJ</b><span class="ucebna ucebna-2">236</span></span></div>
+                        <div class="hodina"><span class="hodina-cas">12:40 – 13:25</span><span class="hodina-radek"><b>VIK</b><span class="ucebna ucebna-3">238</span></span></div>
+                        <div class="hodina"><span class="hodina-cas">13:30 – 14:15</span><span class="hodina-radek"><b>VIK</b><span class="ucebna ucebna-3">238</span></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="projekt-hlava">
+                <h3 class="projekt-nazev"><a href="https://github.com/VitekCharvat/bakalari-rozvrh-widget">Bakaláři Timetable</a></h3>
+                <p class="projekt-druh">iPhone widget · October 2026</p>
+              </div>
+              <p class="projekt-popis">Your school timetable on the iPhone home screen: the current lesson with a live countdown, the classroom, substitutions in orange, and it works offline.</p>
+            </li>
+            <li class="projekt">
+              <figure class="projekt-obrazek"><img src="assets/images/projekty/jazyky.webp" alt="Home page of the Programming Languages website: a large heading on dark blue and a yellow button." width="1200" height="1500" loading="lazy"></figure>
+              <div class="projekt-hlava">
+                <h3 class="projekt-nazev"><a href="https://vitekcharvat.github.io/web-coding-languages/">Programming Languages</a></h3>
+                <p class="projekt-druh">School website · September 2026</p>
+              </div>
+              <p class="projekt-popis">Which languages are used for games, AI, websites and mobile apps, with a short code sample for each field.</p>
+            </li>
+            <li class="projekt">
+              <figure class="projekt-obrazek">
+                <pre class="kod" data-ui role="img" aria-label="countdown.py, one of the Python programs."><code><span class="kod-slovo">import</span> time
+
+<span class="kod-slovo">def</span> countdown():
+    <span class="kod-slovo">try</span>:
+        countTime = int(input(<span class="kod-text">"second to countdown:"</span>))
+        <span class="kod-slovo">while</span> countTime != 0:
+            print(countTime)
+            time.sleep(1)
+            countTime -= 1
+    <span class="kod-slovo">except</span> ValueError:
+        print(<span class="kod-text">"please enter a whole number"</span>)
+
+<span class="kod-slovo">def</span> main():
+    countdown()
+    print(<span class="kod-text">"Countdown ended"</span>)
+
+<span class="kod-pozn"># countdown.py</span></code></pre>
+              </figure>
+              <div class="projekt-hlava">
+                <h3 class="projekt-nazev"><a href="https://github.com/VitekCharvat/Small-Python-Projects">Python Projects</a></h3>
+                <p class="projekt-druh">Small programs · 2026</p>
+              </div>
+              <p class="projekt-popis">Eleven programs that run outside the browser: a password checker, a screen recorder, a weather notifier and a Pokémon lookup.</p>
+            </li>
+            <li class="projekt">
+              <figure class="projekt-obrazek"><img src="assets/images/projekty/giggle.webp" alt="Home page of Giggle: the colourful Giggle logo above a search box." width="1200" height="1500" loading="lazy"></figure>
+              <div class="projekt-hlava">
+                <h3 class="projekt-nazev"><a href="skolni-projekty.html">More projects</a></h3>
+                <p class="projekt-druh">School work · 2026</p>
+              </div>
+              <p class="projekt-popis">Giggle, my own search engine modeled on Google, and the other websites from programming classes.</p>
+            </li>
+          </ul>
+
+          <!-- Rámeček s náhledy: stejné obrázky jako výše, jen pro počítač. -->
+          <div class="ramecek" aria-hidden="true">
+            <img src="assets/images/projekty/spatnikluci.webp" alt="" width="1200" height="1500" loading="lazy">
+            <div class="widget" data-ui>
+              <div class="widget-karta">
+                <div class="widget-hlava"><b>Dnes · pondělí 2. 11.</b><span>ještě 8 hodin · do 16:45</span><span class="widget-tecky"><i></i><i></i></span></div>
+                <div class="widget-sloupce">
+                  <div class="widget-sloupec">
+                    <div class="hodina hodina-ted"><span class="hodina-cas">8:00 – 8:45 <em>· zbývá 12:03</em></span><span class="hodina-radek"><b>EKO</b><span class="ucebna ucebna-1">234</span></span></div>
+                    <div class="hodina"><span class="hodina-cas">8:55 – 9:40</span><span class="hodina-radek"><b>MAT</b><span class="ucebna ucebna-1">234</span></span></div>
+                    <div class="hodina"><span class="hodina-cas">9:50 – 10:35</span><span class="hodina-radek"><b>CJL</b><span class="ucebna ucebna-1">234</span></span></div>
+                  </div>
+                  <div class="widget-sloupec">
+                    <div class="hodina"><span class="hodina-cas">11:45 – 12:30 <em class="supl">· supl.</em></span><span class="hodina-radek"><b class="zmena">ANJ</b><span class="ucebna ucebna-2">236</span></span></div>
+                    <div class="hodina"><span class="hodina-cas">12:40 – 13:25</span><span class="hodina-radek"><b>VIK</b><span class="ucebna ucebna-3">238</span></span></div>
+                    <div class="hodina"><span class="hodina-cas">13:30 – 14:15</span><span class="hodina-radek"><b>VIK</b><span class="ucebna ucebna-3">238</span></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src="assets/images/projekty/jazyky.webp" alt="" width="1200" height="1500" loading="lazy">
+            <pre class="kod" data-ui><code><span class="kod-slovo">import</span> time
+
+<span class="kod-slovo">def</span> countdown():
+    <span class="kod-slovo">try</span>:
+        countTime = int(input(<span class="kod-text">"second to countdown:"</span>))
+        <span class="kod-slovo">while</span> countTime != 0:
+            print(countTime)
+            time.sleep(1)
+            countTime -= 1
+    <span class="kod-slovo">except</span> ValueError:
+        print(<span class="kod-text">"please enter a whole number"</span>)
+
+<span class="kod-slovo">def</span> main():
+    countdown()
+    print(<span class="kod-text">"Countdown ended"</span>)
+
+<span class="kod-pozn"># countdown.py</span></code></pre>
+            <img src="assets/images/projekty/giggle.webp" alt="" width="1200" height="1500" loading="lazy">
+          </div>
         </div>
-        <div class="container uvod-text">
-          <div class="uvod-text-blok">
-            <h1 id="uvod-nadpis">I build websites and small apps.</h1>
-            <p class="uvod-popis">I'm Vít Charvát. I write HTML, CSS and Python, and because I used to draw, I also care about how things look.</p>
-            <div class="uvod-akce">
-              <a class="tlacitko tlacitko-plne" href="#projekty">Projects</a>
-              <a class="odkaz-github" href="https://github.com/VitekCharvat"><i class="fa-brands fa-github ikona" aria-hidden="true"></i>GitHub</a>
+      </section>
+
+      <!-- O mně: fakta vlevo, odstavec od třetiny šířky, pod tím nástroje a data. -->
+      <section id="o-mne" class="sekce obal o-mne" aria-labelledby="o-mne-nadpis">
+        <div class="row o-mne-radek">
+          <div class="col-lg-4">
+            <h2 id="o-mne-nadpis" class="nadpis-sekce">About me</h2>
+            <dl class="fakta">
+              <div><dt>Studies</dt><dd>Information technology</dd></div>
+              <div><dt>School</dt><dd>OA a SOŠL Opava, third year</dd></div>
+              <div><dt>Also does</dt><dd>Drawing and video editing</dd></div>
+            </dl>
+          </div>
+          <div class="col-lg-8">
+            <p class="o-mne-odstavec">I used to draw, and it still shows in my code. Drawing taught me to look at the whole picture, and that is how I build websites today: what you see first, where your eyes go next and where you should click.</p>
+          </div>
+        </div>
+        <div class="row o-mne-radek">
+          <div class="col-lg-4">
+            <h3 class="o-mne-slovo">Tools</h3>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <ul class="zaznam col-md-6">
+                <li>HTML <span>Every website here</span></li>
+                <li>CSS <span>Layouts and animations</span></li>
+                <li>Python <span>11 small programs</span></li>
+              </ul>
+              <ul class="zaznam col-md-6">
+                <li>JavaScript <span>Bakaláři widget</span></li>
+                <li>Git <span>Every project</span></li>
+                <li>GitHub <span>Code and hosting</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row o-mne-radek">
+          <div class="col-lg-4">
+            <h3 class="o-mne-slovo">Timeline</h3>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <ul class="zaznam col-md-6">
+                <li>Python Projects <span>Jan 2026</span></li>
+                <li>Špatní Kluci <span>Summer 2026</span></li>
+                <li>Programming Languages <span>Sep 2026</span></li>
+              </ul>
+              <ul class="zaznam col-md-6">
+                <li>This portfolio <span>Oct 2026</span></li>
+                <li>Giggle <span>Oct 2026</span></li>
+                <li>Bakaláři Timetable <span>Oct 2026</span></li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="projekty" class="container sekce-projekty" aria-labelledby="projekty-nadpis">
-        <h2 id="projekty-nadpis" class="nadpis-sekce">Projects</h2>
-        <ul class="karty">
-          <li>
-            <article class="karta">
-              <p class="karta-stitek">Company website, live</p>
-              <h3>Špatní Kluci</h3>
-              <p class="karta-popis">A website for an Ostrava company that supplies communication technology to professionals. I handled the design, code and deployment on my own.</p>
-              <div class="karta-pata">
-                <span class="karta-technologie">HTML, CSS</span>
-                <a class="odkaz-akcent" href="https://spatnikluci.cz/">spatnikluci.cz<i class="fa-solid fa-arrow-up-right-from-square ikona-ven" aria-hidden="true"></i></a>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="karta">
-              <p class="karta-stitek">iPhone widget</p>
-              <h3>Bakaláři Timetable</h3>
-              <p class="karta-popis">Your Bakaláři school timetable right on the iPhone home screen. Current lesson with a countdown, classroom, substitutions and offline mode.</p>
-              <div class="karta-pata">
-                <span class="karta-technologie">JavaScript, Scriptable</span>
-                <a class="odkaz-akcent" href="https://github.com/VitekCharvat/bakalari-rozvrh-widget"><i class="fa-brands fa-github ikona" aria-hidden="true"></i>Open on GitHub<span class="visually-hidden"> Bakaláři Timetable</span></a>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="karta">
-              <p class="karta-stitek">School website</p>
-              <h3>Programming Languages</h3>
-              <p class="karta-popis">Which languages are used for games, AI, websites and mobile apps, with a code sample for each field.</p>
-              <div class="karta-pata">
-                <span class="karta-technologie">HTML, CSS</span>
-                <a class="odkaz-akcent" href="https://vitekcharvat.github.io/web-coding-languages/">Open website<span class="visually-hidden"> Programming Languages</span><i class="fa-solid fa-arrow-up-right-from-square ikona-ven" aria-hidden="true"></i></a>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="karta">
-              <p class="karta-stitek">Experiments</p>
-              <h3>Python Projects</h3>
-              <p class="karta-popis">Small programs that run outside the browser.</p>
-              <div class="karta-pata">
-                <span class="karta-technologie">Python</span>
-                <a class="odkaz-akcent" href="https://github.com/VitekCharvat/Small-Python-Projects"><i class="fa-brands fa-github ikona" aria-hidden="true"></i>Open on GitHub<span class="visually-hidden"> Python Projects</span></a>
-              </div>
-            </article>
-          </li>
+      <!-- Kontakt: řádky přes celou šířku, střídají dva tóny. -->
+      <section id="kontakt" class="kontakt" aria-labelledby="kontakt-nadpis">
+        <h2 id="kontakt-nadpis" class="kontakt-radek kontakt-pozdrav">Write to me <a class="kontakt-sipka" href="mailto:vitcharvat08@gmail.com?subject=Hello%20from%20your%20portfolio" aria-label="Write me an e-mail"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></h2>
+        <ul>
+          <li class="kontakt-radek"><a href="mailto:vitcharvat08@gmail.com">vitcharvat08<wbr>@gmail.com</a></li>
+          <li class="kontakt-radek"><a href="https://github.com/VitekCharvat">github.com/<wbr>VitekCharvat</a></li>
+          <li class="kontakt-radek">Opava, Czech Republic</li>
         </ul>
-        <div class="dalsi-projekty">
-          <a class="tlacitko tlacitko-obrys" href="skolni-projekty.html">More projects</a>
-        </div>
-      </section>
-
-      <section id="o-mne" class="container sekce o-mne" aria-labelledby="o-mne-nadpis">
-        <h2 id="o-mne-nadpis" class="nadpis-sekce">About me</h2>
-        <div class="o-mne-text">
-          <p class="o-mne-hlavni">I study and I code. Drawing taught me to look at the whole picture, and that is how I look at websites today: what you see first, where your eyes go next and where you should click.</p>
-          <p class="o-mne-dalsi">I work with HTML, CSS, Python, Git and GitHub.</p>
-        </div>
-      </section>
-
-      <section id="kontakt" class="container sekce kontakt" aria-labelledby="kontakt-nadpis">
-        <h2 id="kontakt-nadpis">Get in touch</h2>
-        <div class="kontakt-odkazy">
-          <a class="kontakt-email" href="mailto:vitcharvat08@gmail.com"><i class="fa-solid fa-envelope ikona" aria-hidden="true"></i>vitcharvat08@gmail.com</a>
-          <a class="kontakt-github" href="https://github.com/VitekCharvat"><i class="fa-brands fa-github ikona" aria-hidden="true"></i>github.com/VitekCharvat</a>
-        </div>
       </section>
     </main>
 
-    <footer class="container paticka">
-      <div class="paticka-obsah">
-        <p><span class="paticka-autor">© 2026 Vít Charvát</span><span class="paticka-oddelovac" aria-hidden="true">·</span>AI was used | <a class="paticka-ai" href="https://github.com/VitekCharvat/VitekCharvat.github.io/blob/main/docs/citace.md" target="_blank" rel="noopener noreferrer">CITATIONS<span class="visually-hidden"> (opens in a new tab)</span></a></p>
-        <div class="validace">
-          <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2F" target="_blank" rel="noopener noreferrer">Validate HTML<span class="visually-hidden"> with the W3C validator (opens in a new tab)</span></a>
-          <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2F&amp;profile=css3svg" target="_blank" rel="noopener noreferrer">Validate CSS<span class="visually-hidden"> with the W3C validator (opens in a new tab)</span></a>
+    <footer class="paticka">
+      <div class="obal">
+        <div class="row paticka-sloupce">
+          <div class="col-6 col-lg-3">
+            <h2 class="paticka-nadpis">Pages</h2>
+            <ul>
+              <li><a href="#projekty">Projects</a></li>
+              <li><a href="#o-mne">About me</a></li>
+              <li><a href="skolni-projekty.html">More projects</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h2 class="paticka-nadpis">Elsewhere</h2>
+            <ul>
+              <li><a href="https://github.com/VitekCharvat">GitHub</a></li>
+              <li><a href="mailto:vitcharvat08@gmail.com">E-mail</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h2 class="paticka-nadpis">Built with</h2>
+            <ul>
+              <li>HTML and CSS, no JavaScript</li>
+              <li>Bootstrap, Google Fonts</li>
+              <li>Font Awesome</li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h2 class="paticka-nadpis">Checks</h2>
+            <ul>
+              <li><a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2F" target="_blank" rel="noopener noreferrer">Validate HTML<span class="visually-hidden"> with the W3C validator (opens in a new tab)</span></a></li>
+              <li><a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2F&amp;profile=css3svg" target="_blank" rel="noopener noreferrer">Validate CSS<span class="visually-hidden"> with the W3C validator (opens in a new tab)</span></a></li>
+            </ul>
+          </div>
         </div>
       </div>
+      <p class="paticka-znacka" aria-hidden="true"><span>Vít</span> <span>Charvát</span></p>
+      <p class="paticka-pravni"><span>© 2026 Vít Charvát · The drawing of Opava is made in code</span><span>AI was used | <a href="https://github.com/VitekCharvat/VitekCharvat.github.io/blob/main/docs/citace.md" target="_blank" rel="noopener noreferrer">CITATIONS<span class="visually-hidden"> (opens in a new tab)</span></a></span></p>
     </footer>
   </body>
 </html>
