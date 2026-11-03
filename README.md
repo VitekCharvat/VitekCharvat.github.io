@@ -41,7 +41,7 @@ Animace řízené posouváním stránky (`animation-timeline`) web nepoužívá,
 
 Tlačítka Validate HTML a Validate CSS v patičce spustí W3C validaci zveřejněné stránky v nové kartě.
 
-Kontrola 28. 10. 2026: všechny tři HTML soubory W3C Nu bez chyb i varování, `style.css` W3C CSS Validator (CSS3 + SVG) 0 chyb a 1 varování (CSS proměnné se nekontrolují). Stránka nepřetéká do strany při šířkách 390, 768 a 1440 px.
+Kontrola 28. 10. 2026: všechny tři HTML soubory W3C Nu bez chyb i varování, `style.css` W3C CSS Validator (CSS3 + SVG) 0 chyb a 0 varování (3. 11. 2026). Zbylá varování při validaci celé stránky patří knihovnám Bootstrap a Font Awesome z CDN. Stránka nepřetéká do strany při šířkách 390, 768 a 1440 px.
 
 ## Použití AI
 
@@ -92,7 +92,7 @@ The website doesn't use scroll-driven animations (`animation-timeline`), because
 
 The Validate HTML and Validate CSS buttons in the footer run W3C validation of the published page in a new tab.
 
-Check on 28 Oct 2026: all three HTML files pass W3C Nu with no errors or warnings, and `style.css` passes the W3C CSS Validator (CSS3 + SVG) with 0 errors and 1 warning (CSS variables aren't checked). The page doesn't overflow sideways at widths of 390, 768 and 1440 px.
+Check on 28 Oct 2026: all three HTML files pass W3C Nu with no errors or warnings, and `style.css` passes the W3C CSS Validator (CSS3 + SVG) with 0 errors and 0 warnings (3 Nov 2026). The remaining warnings when validating the whole page come from Bootstrap and Font Awesome loaded from a CDN. The page doesn't overflow sideways at widths of 390, 768 and 1440 px.
 
 ## Use of AI
 

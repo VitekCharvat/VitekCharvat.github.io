@@ -273,7 +273,6 @@ main { position: relative; z-index: 1; background: var(--pozadi); }
   height: 100%;
   padding: 24px;
   background: var(--plocha);
-  font-family: var(--pismo);
   letter-spacing: 0;
 }
 .widget-karta {
